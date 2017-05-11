@@ -4,6 +4,8 @@ title: "ogawalab"
 layout: splash
 ---
 
+[Analysis](./) > ogawalab
+
 # <font class="pre-group"></font> ogawalab
 
 Last updated on 2017/5/11
@@ -20,8 +22,13 @@ Seishi Ogawa M.D., Ph.D., Professor
   {{ notice-text | markdownify }}
 </div>
 
+*** About ogawalab ***
+京都大学大学院医学研究所 腫瘍生物学講座
+Seishi Ogawa M.D., Ph.D., Professor
+{: .notice}
+
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html" style="height:400px; margin-top:50px;"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html" style="height:450px; margin-top:50px;"></iframe>
 {:/nomarkdown}
 
 ## Projects (2)
