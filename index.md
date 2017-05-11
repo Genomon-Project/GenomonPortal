@@ -51,9 +51,7 @@ iframe {
 
 <div class="frame">
 <div class="box" style="width:70%">
-{::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/index_tree.html" height=400></iframe>
-{:/nomarkdown}
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/index_tree.html" style="height:400px;"></iframe>
 </div>
 
 <div class="box">
