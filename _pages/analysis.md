@@ -1,39 +1,38 @@
 ---
 permalink: /analysis/
 title: "Analysis"
-layout: single
+layout: splash
 ---
 
 <style type="text/css">
 iframe {
-  border-collapse: separate;
-  border-spacing: 0px 10px;
+  border: none;
   width: 100%;
-  height: 400px;
+  height: 500px;
 }
 </style>
 
-# ogawalab
+## ogawalab
 
 {::nomarkdown}
 <iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
 {:/nomarkdown}
 
-[View this group]({{ site.url }}{{ site.baseurl }}/analysis/ogawalab){: .btn}
+[View this group]({{ site.url }}{{ site.baseurl }}/analysis/ogawalab){: .btn .align-center}
 
-# ICGC
-
-{::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
-{:/nomarkdown}
-
-[View this group]({{ site.url }}{{ site.baseurl }}/analysis/icgc){: .btn}
-
-# TCGA
+## ICGC
 
 {::nomarkdown}
 <iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
 {:/nomarkdown}
 
-[View this group]({{ site.url }}{{ site.baseurl }}/analysis/tcga){: .btn}
+[View this group]({{ site.url }}{{ site.baseurl }}/analysis/icgc){: .btn .align-center}
+
+## TCGA
+
+{::nomarkdown}
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
+{:/nomarkdown}
+
+[View this group]({{ site.url }}{{ site.baseurl }}/analysis/tcga){: .btn .align-center}
 

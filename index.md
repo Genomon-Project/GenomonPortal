@@ -1,15 +1,14 @@
 ---
 layout: splash
-title: "Genomon Portal"
+title: '<font color="F6EDE4">Genomon Portal</font>'
 header:
   overlay_color: "#333"
-excerpt: '<font color="F6EDE4">Practicing jekyll.<br>For the US radio station, see Fungus (XM).</font>'
+excerpt: '<font color="F6EDE4">çHéñíÜ</font>'
 ---
 
 <style type="text/css">
 iframe {
-  border-collapse: separate;
-  border-spacing: 0px 10px;
+  border: none;
   width: 100%;
   height: 400px;
 }
