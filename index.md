@@ -1,39 +1,25 @@
 ---
+layout: splash
+title: "Genomon Portal"
 header:
-  image: /assets/images/genomon-8fps-1100px-once.gif
-title: 
+  overlay_color: "#333"
+excerpt: '<font color="F6EDE4">Practicing jekyll.<br>For the US radio station, see Fungus (XM).</font>'
 ---
 
 <style type="text/css">
-.title {
-  font-family: "volkhov",serif;
-  font-style: italic;
-  font-weight: bolder;
-  text-align: center;
-  font-size: 3em;
-  line-height: 0.5em;
-  margin-top: 24px;
-  margin-bottom: 60px;
-  color: #343434;
-  text-shadow: none;
-}
-.sub_title {
-  color: #646464;
-  font-size: 0.4em;
-  line-height: 1.4;
+iframe {
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+  width: 100%;
+  height: 400px;
 }
 </style>
 
-<div class="title">
-<p style="margin: 0">Genomon</p>
-<span class="sub_title">&mdash;
-The Zen of Cancer Genome Sequence Analysis</span>
-</div>
-
-Genomon is a suite of bioinformatics tools for analyzing cancer genome and RNA sequencing data.
+{::nomarkdown}
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/index_bar.html"></iframe>
+{:/nomarkdown}
 
 <style type="text/css">
-
 .frame {
   border-collapse: separate;
   border-spacing: 0px 10px;
