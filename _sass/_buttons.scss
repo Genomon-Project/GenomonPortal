@@ -67,6 +67,20 @@
 
   /* information */
 
+  &--external-link {
+    color: #FFF;
+    background-color: #265A88;
+    &:hover { background-color: mix(#000, #265A88, 20%); }
+    &:before { content: $fa-var-external-link; }
+  }
+
+  &--download {
+    color: #FFF;
+    background-color: #265A88;
+    &:hover { background-color: mix(#000, #265A88, 20%); }
+    &:before { content: $fa-var-download; }
+  }
+  
   &--info {
     background-color: $info-color;
 

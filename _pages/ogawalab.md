@@ -16,15 +16,23 @@ Seishi Ogawa M.D., Ph.D., Professor
 
 {% endcapture %}
 
+<style type="text/css">
+iframe {
+  border: none;
+  width: 100%;
+  height: 500px;
+}
+</style>
+
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html" width=800 height=600></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
 {:/nomarkdown}
 
 ## Projects (2)
 
 
-| # | Cancer Types | # Cases (exome) | # Cases (wgs) | # Cases (target) | # Cases (rna-seq) | Date Last Updated (yyyy/mm/dd) |
+| # | Cancer Types | # Cases (exome) | # Cases (wgs) | # Cases (target) | # Cases (rna-seq) | Last Updated (yyyy/mm/dd) |
 |--:|:-------------|----------------:|--------------:|-----------------:|------------------:|-------------------------------:|
-| 1 | [ATL](./atl) |              81 |            26 |                0 |                99 | 2017/03/30 |
-| 2 | [RCC](./rcc) |             106 |            14 |                0 |                 0 | 2017/03/30 |
+| 1 | [ATL](./ogawalab/atl) |              81 |            26 |                0 |                99 | 2017/03/30 |
+| 2 | [RCC](./ogawalab/rcc) |             106 |            14 |                0 |                 0 | 2017/03/30 |
 
