@@ -14,7 +14,7 @@ iframe {
 </style>
 
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/index_bar.html" height=500></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/index_bar.html" style="height:400px; margin-top:50px;"></iframe>
 {:/nomarkdown}
 
 <style type="text/css">
@@ -51,7 +51,9 @@ iframe {
 
 <div class="frame">
 <div class="box" style="width:70%">
+{::nomarkdown}
 <iframe src="{{ site.url }}{{ site.baseurl }}/graphs/index_tree.html" height=400></iframe>
+{:/nomarkdown}
 </div>
 
 <div class="box">
