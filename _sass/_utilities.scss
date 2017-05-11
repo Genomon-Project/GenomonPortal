@@ -474,13 +474,15 @@ a.reversefootnote {
    ========================================================================== */
 
 .exome {
+  margin-right: 5px;
   color: $exome-color;
   .exome:before {
     content: $fa-var-square;
-    //font-family: FontAwesome;
+    font-family: FontAwesome;
   }
 }
 .wgs {
+  margin-right: 5px;
   color: $wgs-color;
   &:before {
     content: $fa-var-square;
@@ -488,6 +490,7 @@ a.reversefootnote {
   }
 }
 .target {
+  margin-right: 5px;
   color: $target-color;
   &:before {
     content: $fa-var-square;
@@ -495,6 +498,7 @@ a.reversefootnote {
   }
 }
 .rna {
+  margin-right: 5px;
   color: $rna-color;
   &:before {
     content: $fa-var-square;
@@ -502,6 +506,7 @@ a.reversefootnote {
   }
 }
 .mirna {
+  margin-right: 5px;
   color: $mirna-color;
   &:before {
     content: $fa-var-square;

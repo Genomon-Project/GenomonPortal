@@ -2,7 +2,7 @@
 permalink: /analysis/ogawalab
 title: "ogawalab"
 layout: splash
-modified: 2017-05-011T14:42:00
+modified: 2017-05-011T14:42:00-04:00
 ---
 
 # ogawalab

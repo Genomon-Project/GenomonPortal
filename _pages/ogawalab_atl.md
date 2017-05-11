@@ -2,7 +2,7 @@
 permalink: /analysis/ogawalab/atl
 title: "ogawalab/ATL"
 layout: splash
-modified: 2017-05-011T14:42:00
+modified: {% last_modified_at %Y/%M/%DT%H:%m:%S-%R %}
 ---
 
 # ATL
@@ -44,13 +44,13 @@ iframe {
 
 ## Sequence Data
 
-| Experimental Strategy             | # Cases | # Files | Last Updated (yyyy/mm/dd) | Analyzed data |
-|:----------------------------------|--------:|--------:|--------------------------:|:-------------:|
-| <font class="exome"></font> EXOME   |      81 |     162 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
-| <font class="wgs"></font>   WGS     |      26 |      52 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
-| <font class="target"></font>TARGET  |       0 |       0 |                 ---       |  |
-| <font class="rna"></font>   RNA     |      99 |     198 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
-| <font class="mirna"></font> miRNA   |       0 |       0 |                 ---       |  |
+| Experimental Strategy              | # Cases | # Files | Last Updated (yyyy/mm/dd) | Analyzed data |
+|:-----------------------------------|--------:|--------:|--------------------------:|:-------------:|
+| <font class="exome"></font> EXOME  |      81 |     162 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <font class="wgs"></font>   WGS    |      26 |      52 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <font class="target"></font>TARGET |       0 |       0 |                 ---       |  |
+| <font class="rna"></font>   RNA    |      99 |     198 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <font class="mirna"></font> miRNA  |       0 |       0 |                 ---       |  |
 
 ## Reports
 
