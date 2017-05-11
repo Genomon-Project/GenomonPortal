@@ -11,7 +11,7 @@ layout: splash
 Last updated on 2017/5/11
 
 {% capture notice-text %}
-*** About ogawalab ***
+#### About ogawalab
 
 京都大学大学院医学研究所 腫瘍生物学講座
 
