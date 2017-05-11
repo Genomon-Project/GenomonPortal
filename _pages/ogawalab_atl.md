@@ -4,7 +4,7 @@ title: "ogawalab/ATL"
 layout: splash
 ---
 
-[Analysis](../) > [ogawalab](./) > ATL
+[Analysis]({{ site.url }}{{ site.baseurl }}/analysis) > [ogawalab]({{ site.url }}{{ site.baseurl }}/analysis/ogawalab)> ATL
 
 # <font class="pre-project"></font> ATL
 
