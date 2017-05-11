@@ -9,6 +9,7 @@ layout: splash
 Last updated on 2017/5/11
 
 <style type="text/css">
+/*
 iframe {
   border: none;
   width: 100%;
@@ -24,6 +25,7 @@ iframe {
   vertical-align: middle;
   padding: 10px;
 }
+*/
 </style>
 
 <div class="frame">
@@ -38,7 +40,7 @@ iframe {
 </div>
 
 <div class="box">
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab_atl.html" style="height:400px; margin-top:50px;"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab_atl.html" style="height:300px; margin-top:10px;"></iframe>
 </div>
 </div>
 

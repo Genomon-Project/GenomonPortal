@@ -1,15 +1,15 @@
 # main links
 main:
-  - title: "About"
+  - title: "About the GP"
     url: /pages/about/
   - title: "Analysis"
     url: /analysis/
-  - title: "Contact"
+  - title: "Contact Us"
     url: /pages/contact/
   #- title: "Sitemap"
   #  url: /pages/sitemap/
-  - title: "Search"
-    url: /pages/search/
+  # - title: "Search"
+  #  url: /pages/search/
   
 
 # documentation links

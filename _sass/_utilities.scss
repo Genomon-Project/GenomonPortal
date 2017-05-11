@@ -527,3 +527,20 @@ a.reversefootnote {
     font-family: FontAwesome;
   }
 }
+
+iframe {
+  border: none;
+  width: 100%;
+}
+.frame {
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+  display: table;
+  width: 100%;
+}
+.box {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+}
+

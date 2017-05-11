@@ -21,15 +21,17 @@ Seishi Ogawa M.D., Ph.D., Professor
 </div>
 
 <style type="text/css">
+/*
 iframe {
   border: none;
   width: 100%;
   height: 500px;
 }
+*/
 </style>
 
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html" style="height:350px; margin-top:50px;"></iframe>
 {:/nomarkdown}
 
 ## Projects (2)
