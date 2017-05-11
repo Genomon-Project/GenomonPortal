@@ -8,26 +8,6 @@ layout: splash
 
 Last updated on 2017/5/11
 
-<style type="text/css">
-/*
-iframe {
-  border: none;
-  width: 100%;
-}
-.frame {
-  border-collapse: separate;
-  border-spacing: 0px 10px;
-  display: table;
-  width: 100%;
-}
-.box {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 10px;
-}
-*/
-</style>
-
 <div class="frame">
 <div class="box" style="width:50%">
 <h3>Summary</h3>
@@ -40,7 +20,7 @@ iframe {
 </div>
 
 <div class="box">
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab_atl.html" style="height:300px; margin-top:10px;"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab_atl.html" style="height:350px; margin-top:10px;"></iframe>
 </div>
 </div>
 
