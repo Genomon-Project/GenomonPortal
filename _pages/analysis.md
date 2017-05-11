@@ -14,25 +14,25 @@ iframe {
 
 ## ogawalab
 
+[View this group]({{ site.url }}{{ site.baseurl }}/analysis/ogawalab){: .btn}
+
 {::nomarkdown}
 <iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
 {:/nomarkdown}
-
-[View this group]({{ site.url }}{{ site.baseurl }}/analysis/ogawalab){: .btn .align-center}
 
 ## ICGC
 
-{::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
-{:/nomarkdown}
+[View this group]({{ site.url }}{{ site.baseurl }}/analysis/icgc){: .btn}
 
-[View this group]({{ site.url }}{{ site.baseurl }}/analysis/icgc){: .btn .align-center}
+{::nomarkdown}
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc.html"></iframe>
+{:/nomarkdown}
 
 ## TCGA
 
-{::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
-{:/nomarkdown}
+[View this group]({{ site.url }}{{ site.baseurl }}/analysis/tcga){: .btn}
 
-[View this group]({{ site.url }}{{ site.baseurl }}/analysis/tcga){: .btn .align-center}
+{::nomarkdown}
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/tcga.html"></iframe>
+{:/nomarkdown}
 
