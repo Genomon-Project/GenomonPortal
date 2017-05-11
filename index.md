@@ -10,13 +10,11 @@ excerpt: '<font color="F6EDE4">工事中</font>'
 iframe {
   border: none;
   width: 100%;
-  height: 400px;
+  height: 600px;
 }
 </style>
 
-{::nomarkdown}
 <iframe src="{{ site.url }}{{ site.baseurl }}/graphs/index_bar.html"></iframe>
-{:/nomarkdown}
 
 <style type="text/css">
 .frame {
@@ -28,48 +26,41 @@ iframe {
 .box {
   display: table-cell;
   vertical-align: middle;
-  background-color: #EFEFEF;
   padding: 10px;
 }
 </style>
 
 <div class="frame">
 <div class="box" style="width:50%">
-<h2>The NCI's Genomic Data Commons (GDC)</h2>
+<h3>The NCI's Genomic Data Commons (GDC)</h3>
 GDC provides the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine.
+<br>
 The GDC supports several cancer genome programs at the NCI Center for Cancer Genomics (CCG), including The Cancer Genome Atlas (TCGA) and Therapeutically Applicable Research to Generate Effective Treatments (TARGET).
 <br>
 </div>
 
 <div class="box">
-
-## High Quality Data Sharing Enables Precision Medicine
-
+<h3>High Quality Data Sharing Enables Precision Medicine</h3>
 The GDC obtains validated datasets from NCI programs in which the strategies for tissue collection couples quantity with high quality.
-
+<br>
 The GDC encourages data sharing in support of precision medicine. Tools are provided to guide data submissions by researchers and institutions.
-
+<br>
 </div>
 </div>
 
 <div class="frame">
 <div class="box" style="width:70%">
-{::nomarkdown}
 <iframe src="{{ site.url }}{{ site.baseurl }}/graphs/index_tree.html"></iframe>
-{:/nomarkdown}
 </div>
 
 <div class="box">
-
-## Data Availability Summary
-
-|||
-|:--------------|:-------:|
-| Groups        | 3       |
-| Projects      | 66      |
-| Disease Types | 33      |
-| Cases         | 20,844  |
-
+<h3>Data Availability Summary</h3>
+<table>
+  <tr><td>Groups       </td><td align=right>     3</td></tr>
+  <tr><td>Projects     </td><td align=right>    66</td></tr>
+  <tr><td>Disease Types</td><td align=right>    33</td></tr>
+  <tr><td>Cases        </td><td align=right>20,844</td></tr>
+</table>
 </div>
 </div>
 
