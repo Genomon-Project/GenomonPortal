@@ -4,7 +4,7 @@ title: "ogawalab"
 layout: splash
 ---
 
-# ogawalab
+# <font class="pre-group"></font> ogawalab
 
 Last updated on 2017/5/11
 
@@ -15,6 +15,10 @@ Last updated on 2017/5/11
 
 Seishi Ogawa M.D., Ph.D., Professor
 {% endcapture %}
+
+<div class="notice">
+  {{ notice-text | markdownify }}
+</div>
 
 <style type="text/css">
 iframe {

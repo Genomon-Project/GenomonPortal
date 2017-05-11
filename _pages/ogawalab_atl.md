@@ -4,7 +4,7 @@ title: "ogawalab/ATL"
 layout: splash
 ---
 
-# <font class="pre-projret"></font> ATL
+# <font class="pre-project"></font> ATL
 
 Last updated on 2017/5/11
 

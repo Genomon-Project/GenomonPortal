@@ -513,6 +513,13 @@ a.reversefootnote {
     font-family: FontAwesome;
   }
 }
+.pre-group {
+  margin-right: 5px;
+  &:before {
+    content: $fa-var-stethoscope;
+    font-family: FontAwesome;
+  }
+}
 .pre-project {
   margin-right: 5px;
   &:before {
