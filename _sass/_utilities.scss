@@ -469,8 +469,14 @@ a.reversefootnote {
   font-weight: bold;
 }
 
+/*
+   Custom
+   ========================================================================== */
 
 .exome {
     color: $exome-color;
-    &:before { content: $fa-var-square; }
+    &:before {
+      content: $fa-var-square;
+      font-family: FontAwesome;
+    }
   }
