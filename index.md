@@ -3,7 +3,7 @@ layout: splash
 title: '<font color="F6EDE4">Genomon Portal</font>'
 header:
   overlay_color: "#333"
-excerpt: '<font color="F6EDE4">çHéñíÜ</font>'
+excerpt: '<font color="F6EDE4">Â∑•‰∫ã‰∏≠</font>'
 ---
 
 <style type="text/css">
