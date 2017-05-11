@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GenomonPortal-{Group}</title>
+    
+  </head>
+  <body>
+    <div id="plot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    <!-- highcharts -->
+    <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
+    <script src="libs/Highcharts-5.0.9/modules/exporting.js"></script>
+    <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
+    <script type="text/javascript">
+      Highcharts.chart('plot', {
+        chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Cases by Disease Type'
+            },
+            //subtitle: {
+            //    text: 'each type'
+            //},
+            xAxis: {
+                categories: ['HCC'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Cases (number)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'EXOME',
+                color: '#7CB5EC',
+                data: [0]
+            },{
+                name: 'WGS',
+                color: '#A9FF96',
+                data: [300]
+            },{
+                name: 'RNA-seq',
+                color: '#F7A35C',
+                data: [247]
+            }]
+        });
+    </script>
+  </body>
+</html>

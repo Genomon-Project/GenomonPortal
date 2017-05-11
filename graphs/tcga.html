@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GenomonPortal-TCGA</title>
+    
+  </head>
+  <body>
+    <div id="plot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    <!-- highcharts -->
+    <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
+    <script src="libs/Highcharts-5.0.9/modules/exporting.js"></script>
+    <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
+    <script type="text/javascript">
+      Highcharts.chart('plot', {
+                    chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Cases by Disease Type'
+            },
+            //subtitle: {
+            //    text: 'each type'
+            //},
+            xAxis: {
+                categories: ['ACC','BLCA','BRCA','CESC','CHOL','COAD','DLBC','HNSC','KICH','GBM','ESCA','KIRC','LAML','KIRP','LGG','MESO','LIHC','OV','LUAD','PAAD','LUSC','READ','PRAD','PCPG','UCEC','TGCT','SKCM','THYM','THCA','UCS','STAD','SARC','UVM'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Cases (number)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'EXOME',
+                color: '#7CB5EC',
+                data: [92,412,829,305,51,323,48,184,316,510,66,376,288,141,516,374,514,485,83,67,184,179,498,102,255,470,441,150,496,123,456,57,80]
+            },{
+                name: 'RNA-seq',
+                color: '#F7A35C',
+                data: [  79, 433,1256, 309,  45, 546,  48, 198, 175, 566,  91, 618, 323, 179, 534, 424, 601, 555,  87, 430, 183, 187, 558, 177, 265, 473, 453, 156, 572, 122, 593,  57,  80]
+            }]
+        });
+    </script>
+  </body>
+</html>

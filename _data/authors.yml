@@ -1,0 +1,22 @@
+# Authors
+
+Shiraishi:
+  name        : "Yuichi Shiraishi"
+  uri         : "https://github.com/friend1ws"
+  email       : "friend1ws@gmail.com"
+  bio         : 
+  avatar      : "/assets/images/bio-photo.jpg"
+
+Chiba:
+  name        : "Ken-ichi Chiba"
+  uri         : "https://github.com/ken0-1n"
+  email       : "kchiba@hgc.jp"
+  bio         : 
+  avatar      : "/assets/images/chiba.png"
+
+Okada:
+  name        : "Ai Okada"
+  uri         : "https://github.com/aokad"
+  email       : 
+  bio         : team Genomon WEB係
+  avatar      : "/assets/images/okada.png"

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GenomonPortal-index</title>
+    
+  </head>
+  <body>
+    <div id="plot" style="min-width: 100px; height: 300px; margin: 0px auto;"></div>
+
+    <!-- highcharts -->
+    <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
+    <script src="libs/Highcharts-5.0.9/modules/exporting.js"></script>
+    <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
+    <script type="text/javascript">
+      Highcharts.chart('plot', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Cases by Primary Site'
+        },
+        xAxis: {
+            categories: ['Adrenal Gland','Bile Duct','Bladder','Bone Marrow','Brain','Breast','Cervix','Colorectal','Esophagus','Eye','Head and Neck','Kidney','Liver','Lung','Lymph Nodes','Ovary','Pancreas','Pleura','Prostate','Skin','Soft Tissue','Stomach','Testis','Thymus','Thyroid','Uterus']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total fruit consumption'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        },
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
+        tooltip: {
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: false,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                }
+            }
+        },
+        series: [{
+            name: 'EXOME',
+            color: '#7CB5EC',
+            data: [271,51,412,141,832,829,305,425,184,80,510,730,374,999,48,67,184,83,498,470,255,441,150,123,496,513]
+        }, {
+            name: 'RNA-seq',
+            color: '#F7A35C',
+            data: [266,45,433,179,709,1256,309,723,198,80,566,1032,424,1156,48,430,183,87,558,473,265,453,156,122,572,650]
+        }]
+      });
+    </script>
+  </body>
+</html>

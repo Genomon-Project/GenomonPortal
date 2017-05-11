@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>GenomonPortal</title>
+
+    <!-- Bootstrap -->
+    <link href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="libs/jquery_v3.2.0/jquery-3.2.0.min.js"></script>
+
+    <script type="text/javascript">
+    $(function () {
+        Highcharts.chart('plot_area', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Cases by Disease Type'
+            },
+            //subtitle: {
+            //    text: 'each type'
+            //},
+            xAxis: {
+                categories: ['AML','ATL','DS-AMKL','ESCA','Kikuchi_Disease','MDS','RCC'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Cases (number)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'EXOME',
+                color: '#7CB5EC',
+                data: [81,106]
+            },{
+                name: 'WGS',
+                color: '#A9FF96',
+                data: [11,26,8,4,12,29,14]
+            },{
+                name: 'RNA-seq',
+                color: '#F7A35C',
+                data: [99,0]
+            }]
+        });
+    });
+    </script>
+
+  </head>
+  <body>
+    <!-- highcharts -->
+    <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
+    <script src="libs/Highcharts-5.0.9/modules/exporting.js"></script>
+
+    <img src="images/header-human-genome-center.png" / style="width:400px; padding:30px" >
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">Genomon Portal</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#submit">Analysis</a></li>
+            <li><a href="#develop">About the GP</a></li>
+            <li><a href="#support">Contact Us</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-left" role="search" action="http://www.google.com/search">
+              <div class="form-group">
+                <input type="hidden" name="hl" value="ja" />
+                <input type="hidden" name="ie" value="utf-8">
+                <input type="hidden" name="oe" value="utf-8">
+                <input type="hidden" value="genomon-project.github.io" name="as_sitesearch" />
+                <input type="text" class="form-control" name="q" size="31" maxlength="256" value="" placeholder="検索キーワード" />
+              </div>
+              <input type="submit" class="btn btn-default" name="btnG" value="検索" />
+            </form>
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- header -->
+      <p><small>Home&nbsp;&gt;&nbsp;Access Data&nbsp;&gt;&nbsp;Select from Group&nbsp;&gt;&nbsp;ogawalab</small></p>
+      <h2>ogawalab </h2>
+      <p>Last updated on 2017/3/30</p>
+
+      <!-- chart -->
+      <div id="plot_area" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+      <!-- data table -->
+      <h3>Groups (3)</h3>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Cancer Types</th>
+              <th>Cancer Types</th>
+              <!-- <th>Primary Site</th> -->
+              <th># Cases (exome)</th>
+              <th># Cases (wgs)</th>
+              <th># Cases (target)</th>
+              <th># Cases (rna-seq)</th>
+              <th>Date Last Updated (yyyy/mm/dd)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"> 1</th><td data-toggle="tooltip" data-placement="left" title="dummy text"           ><a href="./ogawalab-atl.html" target=_blank>AML            </a></td><td> 0</td><td> 11</td><td> 0</td><td> 0</td><td>2017/03/30</td></tr>
+            <tr><th scope="row"> 2</th><td data-toggle="tooltip" data-placement="left" title="Adult T-cell Leukemia"><a href="./ogawalab-atl.html" target=_blank>ATL            </a></td><td>81</td><td> 26</td><td> 0</td><td>99</td><td>2017/03/30</td></tr>
+            <tr><th scope="row"> 3</th><td data-toggle="tooltip" data-placement="left" title="dummy text"           ><a href="./ogawalab-atl.html" target=_blank>DS-AMKL        </a></td><td> 0</td><td>  8</td><td> 0</td><td> 0</td><td>2017/03/30</td></tr>
+            <tr><th scope="row"> 4</th><td data-toggle="tooltip" data-placement="left" title="dummy text"           ><a href="./ogawalab-atl.html" target=_blank>ESCA           </a></td><td> 0</td><td>  4</td><td> 0</td><td> 0</td><td>2017/03/30</td></tr>
+            <tr><th scope="row"> 5</th><td data-toggle="tooltip" data-placement="left" title="dummy text"           ><a href="./ogawalab-atl.html" target=_blank>Kikuchi_Disease</a></td><td> 0</td><td> 12</td><td> 0</td><td> 0</td><td>2017/03/30</td></tr>
+            <tr><th scope="row"> 6</th><td data-toggle="tooltip" data-placement="left" title="dummy text"           ><a href="./ogawalab-atl.html" target=_blank>MDS            </a></td><td> 0</td><td> 29</td><td> 0</td><td> 0</td><td>2017/03/30</td></tr>
+            <tr><th scope="row"> 7</th><td data-toggle="tooltip" data-placement="left" title="Renal Cell Carcinoma"> <a href="./ogawalab-rcc.html" target=_blank>RCC            </a></td><td>106</td><td>14</td><td> 0</td><td> 0</td><td>2017/03/30</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div> <!-- /container -->
+
+    <footer style="  display: block;  font-size: 80%;  line-height: 1.42857143;  color: #777;">
+      <div class="container">
+        <hr>
+        <p>&copy; 2017 Team Gemonon.</p>
+      </div>
+    </footer>
+
+    <script src="libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

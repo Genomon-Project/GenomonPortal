@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GenomonPortal-ogawalab-ATL</title>
+    
+  </head>
+  <body>
+   <div id="plot" style="min-width: 100px; height: 300px; margin: 0 auto;"></div>
+
+    <!-- highcharts -->
+    <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
+    <script src="libs/Highcharts-5.0.9/modules/exporting.js"></script>
+    <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
+    <script type="text/javascript">
+      Highcharts.chart('plot', {
+        chart: {
+              plotBackgroundColor: null,
+              plotBorderWidth: null,
+              plotShadow: false,
+              type: 'pie'
+          },
+          title: {
+              text: 'Cases'
+          },
+          tooltip: {
+              pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          },
+          plotOptions: {
+              pie: {
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  dataLabels: {
+                      enabled: false
+                  },
+                  showInLegend: true
+              }
+          },
+          series: [{
+              name: 'Cases',
+              colorByPoint: true,
+              data: [ {name: 'EXOME'    , y: 81, color: '#7CB5EC', sliced: false, selected: false}, 
+                      {name: 'WGS'      , y: 26, color: '#A9FF96'}, 
+                      {name: 'TARGET'   , y: 0, color: '#8085E9'}, 
+                      {name: 'RNA-seq'  , y: 99, color: '#F7A35C'}, 
+                      {name: 'miRNA-seq', y:  0, color: '#F15C80'}
+                    ]
+          }]
+      });
+    </script>
+  </body>
+</html>
