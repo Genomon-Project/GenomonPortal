@@ -2,7 +2,7 @@
 permalink: /analysis/ogawalab/atl
 title: "ogawalab/ATL"
 layout: splash
-modified: {% last_modified_at %Y/%M/%DT%H:%m:%S-%R %}
+
 ---
 
 # ATL
