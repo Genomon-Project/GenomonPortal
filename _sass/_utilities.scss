@@ -473,15 +473,15 @@ a.reversefootnote {
    Custom
    ========================================================================== */
 
-.exome {
+.pre-exome {
   margin-right: 5px;
   color: $exome-color;
-  .exome:before {
+  &:before {
     content: $fa-var-square;
     font-family: FontAwesome;
   }
 }
-.wgs {
+.pre-wgs {
   margin-right: 5px;
   color: $wgs-color;
   &:before {
@@ -489,7 +489,7 @@ a.reversefootnote {
     font-family: FontAwesome;
   }
 }
-.target {
+.pre-target {
   margin-right: 5px;
   color: $target-color;
   &:before {
@@ -497,7 +497,7 @@ a.reversefootnote {
     font-family: FontAwesome;
   }
 }
-.rna {
+.pre-rna {
   margin-right: 5px;
   color: $rna-color;
   &:before {
@@ -505,7 +505,7 @@ a.reversefootnote {
     font-family: FontAwesome;
   }
 }
-.mirna {
+.pre-mirna {
   margin-right: 5px;
   color: $mirna-color;
   &:before {
@@ -513,7 +513,7 @@ a.reversefootnote {
     font-family: FontAwesome;
   }
 }
-.project {
+.pre-project {
   margin-right: 5px;
   &:before {
     content: $fa-var-align-left;

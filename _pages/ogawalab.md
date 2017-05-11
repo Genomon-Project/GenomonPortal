@@ -8,13 +8,12 @@ layout: splash
 
 Last updated on 2017/5/11
 
-{% capture notice-2 %}
+{% capture notice-text %}
 #### About ogawalab
 
 京都大学大学院医学研究所 腫瘍生物学講座
 
 Seishi Ogawa M.D., Ph.D., Professor
-
 {% endcapture %}
 
 <style type="text/css">
