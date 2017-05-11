@@ -4,7 +4,7 @@ title: "ogawalab/ATL"
 layout: splash
 ---
 
-[Analysis](./) > [ogawalab](./ogawalab) > ATL
+[Analysis](../) > [ogawalab](./) > ATL
 
 # <font class="pre-project"></font> ATL
 
