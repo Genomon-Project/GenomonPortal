@@ -2,6 +2,7 @@
 title: 'Genomon Portal'
 header:
   overlay_image: /assets/images/s3_thin2.jpg
+  overlay_color: "#000"
   overlay_filter: "0.5"
 excerpt: '<font color="F6EDE4">工事中</font>'
 ---
