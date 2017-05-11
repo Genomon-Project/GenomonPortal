@@ -513,3 +513,10 @@ a.reversefootnote {
     font-family: FontAwesome;
   }
 }
+.project {
+  margin-right: 5px;
+  &:before {
+    content: $fa-var-align-left;
+    font-family: FontAwesome;
+  }
+}

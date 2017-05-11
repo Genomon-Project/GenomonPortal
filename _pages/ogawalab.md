@@ -2,10 +2,11 @@
 permalink: /analysis/ogawalab
 title: "ogawalab"
 layout: splash
-modified: 2017-05-011T14:42:00-04:00
 ---
 
 # ogawalab
+
+Last updated on 2017/5/11
 
 {% capture notice-2 %}
 #### About ogawalab
