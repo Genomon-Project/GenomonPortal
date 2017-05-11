@@ -46,7 +46,7 @@ iframe {
 
 | Experimental Strategy                                         | # Cases | # Files | Last Updated (yyyy/mm/dd) | Analyzed data |
 |:--------------------------------------------------------------|--------:|--------:|--------------------------:|:-------------:|
-| <i class="fa fa-fw fa-square" color="{{ $exome-color }}"></i> EXOME   |      81 |     162 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <i class="exome"></i> EXOME   |      81 |     162 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
 | <i class="fa fa-fw fa-square" color=$wgs-color></i> WGS       |      26 |      52 |                 2017/4/30 | <a href="#" class="btn btn--link"><i class="fa fa-fw fa-external-link" aria-hidden="true"></i></a> <a href="#" class="btn btn--link"><i class="fa fa-fw fa-download" aria-hidden="true"></i></a> |
 | <i class="fa fa-fw fa-square" color=$target-color></i> TARGET |       0 |       0 |                 ---       | <a href="#" class="btn btn--link"><i class="fa fa-fw fa-external-link" aria-hidden="true"></i></a> <a href="#" class="btn btn--link"><i class="fa fa-fw fa-download" aria-hidden="true"></i></a> |
 | <i class="fa fa-fw fa-square" color=$rna-color></i> RNA       |      99 |     198 |                 2017/4/30 | <a href="#" class="btn btn--link"><i class="fa fa-fw fa-external-link" aria-hidden="true"></i></a> <a href="#" class="btn btn--link"><i class="fa fa-fw fa-download" aria-hidden="true"></i></a> |
