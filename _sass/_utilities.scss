@@ -473,10 +473,38 @@ a.reversefootnote {
    Custom
    ========================================================================== */
 
-.exome {
-    color: $exome-color;
-    &:before {
-      content: $fa-var-square;
-      font-family: FontAwesome;
-    }
+.pre-exome {
+  color: $exome-color;
+  &:before {
+    content: $fa-var-square;
+    font-family: FontAwesome;
   }
+}
+.pre-wgs {
+  color: $wgs-color;
+  &:before {
+    content: $fa-var-square;
+    font-family: FontAwesome;
+  }
+}
+.pre-target {
+  color: $target-color;
+  &:before {
+    content: $fa-var-square;
+    font-family: FontAwesome;
+  }
+}
+.pre-rna {
+  color: $rna-color;
+  &:before {
+    content: $fa-var-square;
+    font-family: FontAwesome;
+  }
+}
+.pre-mirna {
+  color: $mirna-color;
+  &:before {
+    content: $fa-var-square;
+    font-family: FontAwesome;
+  }
+}

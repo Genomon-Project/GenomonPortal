@@ -37,23 +37,22 @@ iframe {
 </div>
 
 <div class="box">
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab-atl.html" style="height:400px; margin-top:50px;"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab_atl.html" style="height:400px; margin-top:50px;"></iframe>
 </div>
 </div>
 
 
 ## Sequence Data
 
-| Experimental Strategy                                         | # Cases | # Files | Last Updated (yyyy/mm/dd) | Analyzed data |
-|:--------------------------------------------------------------|--------:|--------:|--------------------------:|:-------------:|
-| <i class="exome"></i> EXOME   |      81 |     162 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
-| <i class="fa fa-fw fa-square" color=$wgs-color></i> WGS       |      26 |      52 |                 2017/4/30 | <a href="#" class="btn btn--link"><i class="fa fa-fw fa-external-link" aria-hidden="true"></i></a> <a href="#" class="btn btn--link"><i class="fa fa-fw fa-download" aria-hidden="true"></i></a> |
-| <i class="fa fa-fw fa-square" color=$target-color></i> TARGET |       0 |       0 |                 ---       | <a href="#" class="btn btn--link"><i class="fa fa-fw fa-external-link" aria-hidden="true"></i></a> <a href="#" class="btn btn--link"><i class="fa fa-fw fa-download" aria-hidden="true"></i></a> |
-| <i class="fa fa-fw fa-square" color=$rna-color></i> RNA       |      99 |     198 |                 2017/4/30 | <a href="#" class="btn btn--link"><i class="fa fa-fw fa-external-link" aria-hidden="true"></i></a> <a href="#" class="btn btn--link"><i class="fa fa-fw fa-download" aria-hidden="true"></i></a> |
-| <i class="fa fa-fw fa-square" color=$mirna-color></i> miRNA   |       0 |       0 |                 ---       | <a href="#" class="btn btn--link"><i class="fa fa-fw fa-external-link" aria-hidden="true"></i></a> <a href="#" class="btn btn--link"><i class="fa fa-fw fa-download" aria-hidden="true"></i></a> |
+| Experimental Strategy             | # Cases | # Files | Last Updated (yyyy/mm/dd) | Analyzed data |
+|:----------------------------------|--------:|--------:|--------------------------:|:-------------:|
+| <p class="pre-exome"></p> EXOME   |      81 |     162 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <p class="pre-wgs"></p>   WGS     |      26 |      52 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <p class="pre-target"></p>TARGET  |       0 |       0 |                 ---       |  |
+| <p class="pre-rna"></p>   RNA     |      99 |     198 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <p class="pre-mirna"></p> miRNA   |       0 |       0 |                 ---       |  |
 
 ## Reports
 
  - Integrated molecular analysis of adult T cell leukemia/lymphoma., Kataoka K et al., Nat Genet. Online, 2015.
 
-<a href="#" class="btn btn--facebook" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
