@@ -4,33 +4,12 @@ header:
   overlay_image: /assets/images/s3_thin2.jpg
   overlay_color: "#000"
   overlay_filter: "0.5"
-excerpt: '<font color="F6EDE4">工事中</font>'
+excerpt: 工事中
 ---
-
-<style type="text/css">
-iframe {
-  border: none;
-  width: 100%;
-}
-</style>
 
 {::nomarkdown}
 <iframe src="{{ site.url }}{{ site.baseurl }}/graphs/index_bar.html" style="height:400px; margin-top:50px;"></iframe>
 {:/nomarkdown}
-
-<style type="text/css">
-.frame {
-  border-collapse: separate;
-  border-spacing: 0px 10px;
-  display: table;
-  width: 100%;
-}
-.box {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 10px;
-}
-</style>
 
 <div class="frame">
 <div class="box" style="width:50%">

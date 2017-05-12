@@ -117,11 +117,9 @@
   &--overlay {
     position: relative;
     margin-bottom: 2em;
-    //padding: 3em 0;
-    padding: 5em 0;
+    padding: 3em 0;
     @include clearfix;
-    //background-size: cover;
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     //background-position: center;
     background-position: right;
@@ -145,8 +143,7 @@
     .page__meta,
     .page__lead,
     .btn {
-      //color: #fff;
-      color: #333;
+      color: #fff;
       text-shadow: 1px 1px 4px rgba(#000, 0.5);
     }
 
