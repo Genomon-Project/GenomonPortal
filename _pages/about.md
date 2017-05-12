@@ -32,4 +32,4 @@ users can start analysis just preparing simple sample configuration files.
 
 このサイトはチームGenomonにより作成されています。
 
-<p><a href="./contact"><font class="pre-link"></font> About th GP</a></p>
+[<font class="pre-link"></font> Contact Us](../contact)
