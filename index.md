@@ -14,15 +14,15 @@ excerpt: 工事中
 
 <div class="frame">
 <div class="box" style="width:50%">
-<h2>The NCI's Genomic Data Commons (GDC)</h2>
-<p>GDC provides the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine.</p>
-<p>The GDC supports several cancer genome programs at the NCI Center for Cancer Genomics (CCG), including The Cancer Genome Atlas (TCGA) and Therapeutically Applicable Research to Generate Effective Treatments (TARGET).</p>
+<h3>The Genomon Portal (GP)</h3>
+<p>GPは医学支援のため、がんゲノム研究成果のデータ共有を目指しています。</p>
+<p><a href="./pages/about"><font class="pre-link"></font> About th GP</a></p>
 </div>
 
 <div class="box">
-<h2>High Quality Data Sharing Enables Precision Medicine</h2>
-<p>The GDC obtains validated datasets from NCI programs in which the strategies for tissue collection couples quantity with high quality.</p>
-<p>The GDC encourages data sharing in support of precision medicine. Tools are provided to guide data submissions by researchers and institutions.</p>
+<h3>Analysis　Data</h3>
+<p>GPでは、GenomonPipelineを使用して解析されたがんゲノム解析結果の一部を所有者の許可を得て公開しています。</p>
+<p><a href="./analysis"><font class="pre-link"></font> Anlysis</a></p>
 </div>
 </div>
 
