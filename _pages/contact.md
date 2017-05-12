@@ -1,8 +1,6 @@
 ---
 title: "Contact us"
 permalink: /pages/contact/
-excerpt: "The Zen of Cancer Genome Analysis"
-modified: 2016-11-03T10:55:15-04:00
 ---
 
 Genomon Project is a collaborative effort between 
