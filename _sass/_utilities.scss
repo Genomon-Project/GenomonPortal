@@ -513,10 +513,17 @@ a.reversefootnote {
     font-family: FontAwesome;
   }
 }
+.pre-link {
+  margin-right: 5px;
+  &:before {
+    content: $fa-var-arrow-right;
+    font-family: FontAwesome;
+  }
+}
 .pre-group {
   margin-right: 5px;
   &:before {
-    content: $fa-var-stethoscope;
+    content: $fa-var-flask;
     font-family: FontAwesome;
   }
 }
