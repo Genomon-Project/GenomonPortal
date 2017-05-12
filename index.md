@@ -1,5 +1,6 @@
 ---
 title: 'Genomon Portal'
+layout: splash
 header:
   overlay_image: /assets/images/s3_thin2.jpg
   overlay_color: "#000"
