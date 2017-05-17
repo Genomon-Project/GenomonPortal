@@ -4,7 +4,7 @@ layout: splash
 header:
   overlay_image: /assets/images/s3_thin2.jpg
   overlay_color: "#000"
-  overlay_filter: "0.7"
+  overlay_filter: "0.5"
 excerpt: 工事中
 ---
 
