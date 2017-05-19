@@ -22,10 +22,10 @@ iframe {
 
 ## ICGC
 
-[View this group]({{ site.url }}{{ site.baseurl }}/analysis/icgc){: .btn}
+[View this group]({{ site.url }}{{ site.baseurl }}/analysis/icgc_riken){: .btn}
 
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc.html"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken.html"></iframe>
 {:/nomarkdown}
 
 ## TCGA
