@@ -1,12 +1,12 @@
 ---
-permalink: /analysis/ogawalab/atl
-title: "ogawalab/ATL"
+permalink: /analysis/ogawalab/rcc
+title: "ogawalab/RCC"
 layout: splash
 ---
 
-[Analysis]({{ site.url }}{{ site.baseurl }}/analysis) > [ogawalab]({{ site.url }}{{ site.baseurl }}/analysis/ogawalab)> ATL
+[Analysis]({{ site.url }}{{ site.baseurl }}/analysis) > [ogawalab]({{ site.url }}{{ site.baseurl }}/analysis/ogawalab)> RCC
 
-# <font class="pre-project"></font> ATL
+# <font class="pre-project"></font> RCC
 
 Last updated on 2017/5/11
 
@@ -14,7 +14,7 @@ Last updated on 2017/5/11
 <div class="box" style="width:50%">
 <h3>Summary</h3>
 <table>
-  <tr><td>Project Name</td><td>ATL                  </td></tr>
+  <tr><td>Project Name</td><td>RCC                  </td></tr>
   <tr><td>Disease Type</td><td>Adult T-cell Leukemia</td></tr>
   <tr><td>Primary Site</td><td>Lymph Nodes          </td></tr>
   <tr><td>Group       </td><td>ogawalab             </td></tr>
@@ -22,7 +22,7 @@ Last updated on 2017/5/11
 </div>
 
 <div class="box">
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab_atl.html" style="height:350px; margin-top:10px;"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab_rcc.html" style="height:350px; margin-top:10px;"></iframe>
 </div>
 </div>
 
