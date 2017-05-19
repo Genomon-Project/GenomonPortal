@@ -14,6 +14,7 @@
     <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
     <script src="libs/Highcharts-5.0.9/modules/exporting.js"></script>
     <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
+    <script src="style/default.js"></script>
     <script type="text/javascript">
       Highcharts.chart('plot', {
         chart: {
@@ -22,9 +23,6 @@
             title: {
                 text: 'Cases by Disease Type'
             },
-            //subtitle: {
-            //    text: 'each type'
-            //},
             xAxis: {
                 categories: ['HCC'],
                 crosshair: true
@@ -49,19 +47,13 @@
                     borderWidth: 0
                 }
             },
-            series: [{
-                name: 'EXOME',
-                color: '#7CB5EC',
-                data: [0]
-            },{
-                name: 'WGS',
-                color: '#A9FF96',
-                data: [300]
-            },{
-                name: 'RNA-seq',
-                color: '#F7A35C',
-                data: [247]
-            }]
+            series: [
+              { name: style.label_exome, color: style.color_exome, data: [  0] },
+              { name: style.label_wgs__, color: style.color_wgs__, data: [300] },
+              { name: style.label_targt, color: style.color_targt, data: [  0] },
+              { name: style.label_rna_p, color: style.color_rna_p, data: [247] },
+              { name: style.label_rna_s, color: style.color_rna_s, data: [  0] },
+            ]
         });
     </script>
   </body>

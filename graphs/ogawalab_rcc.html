@@ -14,6 +14,7 @@
     <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
     <script src="libs/Highcharts-5.0.9/modules/exporting.js"></script>
     <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
+    <script src="style/default.js"></script>
     <script type="text/javascript">
       Highcharts.chart('plot', {
         chart: {
@@ -41,11 +42,12 @@
           series: [{
               name: 'Cases',
               colorByPoint: true,
-              data: [ {name: 'EXOME'    , y: 106, color: '#7CB5EC', sliced: false, selected: false}, 
-                      {name: 'WGS'      , y: 14, color: '#A9FF96'}, 
-                      {name: 'TARGET'   , y: 0, color: '#8085E9'}, 
-                      {name: 'RNA-seq'  , y: 0, color: '#F7A35C'}, 
-                      {name: 'miRNA-seq', y:  0, color: '#F15C80'}
+              data: [
+                      { name: style.label_exome, color: style.color_exome, y: 106, sliced: false, selected: false}, 
+                      { name: style.label_wgs__, color: style.color_wgs__, y:  14},
+                      { name: style.label_targt, color: style.color_targt, y:   0},
+                      { name: style.label_rna_p, color: style.color_rna_p, y:   0},
+                      { name: style.label_rna_s, color: style.color_rna_s, y:   0},
                     ]
           }]
       });
