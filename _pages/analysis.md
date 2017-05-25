@@ -8,7 +8,7 @@ layout: splash
 iframe {
   border: none;
   width: 100%;
-  height: 400px;
+  height: 430px;
 }
 </style>
 
