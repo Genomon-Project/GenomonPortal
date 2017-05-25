@@ -8,7 +8,7 @@ layout: splash
 iframe {
   border: none;
   width: 100%;
-  height: 500px;
+  height: 400px;
 }
 </style>
 
@@ -17,7 +17,7 @@ iframe {
 [View this group]({{ site.url }}{{ site.baseurl }}/analysis/ogawalab){: .btn}
 
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html" scrolling="no" frameborder="no"></iframe>
 {:/nomarkdown}
 
 ## ICGC
@@ -25,7 +25,7 @@ iframe {
 [View this group]({{ site.url }}{{ site.baseurl }}/analysis/icgc_riken){: .btn}
 
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken.html"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken.html" scrolling="no" frameborder="no"></iframe>
 {:/nomarkdown}
 
 ## TCGA
@@ -33,6 +33,6 @@ iframe {
 [View this group]({{ site.url }}{{ site.baseurl }}/analysis/tcga){: .btn}
 
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/tcga.html"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/tcga.html" scrolling="no" frameborder="no"></iframe>
 {:/nomarkdown}
 
