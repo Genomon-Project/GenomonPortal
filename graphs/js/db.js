@@ -47,113 +47,128 @@ db.disease = {
 db.projects = {
     ogawalab: {
         label: "ogawalab",
-        exome: {
-            atl: { cases:  81, files: 162, last_update: "2017/4/30" },
-            rcc: { cases: 106, files: 212, last_update: "2017/4/30" },
-            tam: { cases:  29, files:  54, last_update: "2017/4/30" },
+        data: {
+            exome: {
+                atl: { cases:  81, files: 162, last_update: "2017/4/30" },
+                rcc: { cases: 106, files: 212, last_update: "2017/4/30" },
+                tam: { cases:  29, files:  54, last_update: "2017/4/30" },
+            },
+            wgs: {
+                atl_hiseq:   { cases: 11, files: 22, last_update: "2017/4/30", label: "ATL_hiseq", parent_id: "atl"},
+                atl_lowpass: { cases: 38, files: 76, last_update: "2017/4/30", label: "ATL_XTEN_lowpass", parent_id: "atl"},
+                atl:   { cases: 26, files: 52, last_update: "2017/4/30", label: "ATL_XTEN_merge"},
+                rcc:         { cases: 14, files: 28, last_update: "2017/4/30" },
+                // aml:         { cases: 11, files: 15, last_update: "2017/4/30" },
+                // ds_amkl:     { cases:  8, files: 16, last_update: "2017/4/30" },
+                // esca:        { cases:  4, files:  4, last_update: "2017/4/30" },
+                // kikuchi:     { cases: 12, files: 12, last_update: "2017/4/30" },
+                // mds:         { cases: 29, files: 58, last_update: "2017/4/30" },
+            },
+            rna: {
+                atl: { cases:  99, files: 99, last_update: "2017/4/30" },
+            },
         },
-        wgs: {
-            atl_hiseq:   { cases: 11, files: 22, last_update: "2017/4/30", label: "ATL_hiseq", parent_id: "atl"},
-            atl_lowpass: { cases: 38, files: 76, last_update: "2017/4/30", label: "ATL_XTEN_lowpass", parent_id: "atl"},
-            atl:   { cases: 26, files: 52, last_update: "2017/4/30", label: "ATL_XTEN_merge", parent_id: "atl"},
-            rcc:         { cases: 14, files: 28, last_update: "2017/4/30" },
-            // aml:         { cases: 11, files: 15, last_update: "2017/4/30" },
-            // ds_amkl:     { cases:  8, files: 16, last_update: "2017/4/30" },
-            // esca:        { cases:  4, files:  4, last_update: "2017/4/30" },
-            // kikuchi:     { cases: 12, files: 12, last_update: "2017/4/30" },
-            // mds:         { cases: 29, files: 58, last_update: "2017/4/30" },
-        },
-        rna: {
-            atl: { cases:  99, files: 99, last_update: "2017/4/30" },
+        report: {
+            atl: [{ title:"Integrated molecular analysis of adult T cell leukemia/lymphoma., Kataoka K et al., Nat Genet. Online, 2015.", link: "" },
+                 ],
+            rcc: [],
         },
     },
     icgc_riken: {
         label: "icgc_riken",
-        exome: {},
-        wgs: {
-            hcc: { cases: 300, files: 300, last_update: "2017/4/30" },
+        data: {
+            wgs: {
+                hcc: { cases: 300, files: 300, last_update: "2017/4/30" },
+            },
+            rna: {
+                hcc: { cases: 247, files: 247, last_update: "2017/4/30" },
+            },
         },
-        rna: {
-            hcc: { cases: 247, files: 247, last_update: "2017/4/30" },
+        report: {
+            hcc: [],
         },
     },
     tcga: {
         label: "TCGA",
-        exome: {
-            acc:  { cases:  92, files: 0, last_update: "2017/4/30" },
-            blca: { cases: 412, files: 0, last_update: "2017/4/30" },
-            brca: { cases: 829, files: 0, last_update: "2017/4/30" },
-            cesc: { cases: 305, files: 0, last_update: "2017/4/30" },
-            chol: { cases:  51, files: 0, last_update: "2017/4/30" },
-            coad: { cases: 323, files: 0, last_update: "2017/4/30" },
-            dlbc: { cases:  48, files: 0, last_update: "2017/4/30" },
-            esca: { cases: 184, files: 0, last_update: "2017/4/30" },
-            gbm:  { cases: 316, files: 0, last_update: "2017/4/30" },
-            hnsc: { cases: 510, files: 0, last_update: "2017/4/30" },
-            kich: { cases:  66, files: 0, last_update: "2017/4/30" },
-            kirc: { cases: 376, files: 0, last_update: "2017/4/30" },
-            kirp: { cases: 288, files: 0, last_update: "2017/4/30" },
-            laml: { cases: 141, files: 0, last_update: "2017/4/30" },
-            lgg:  { cases: 516, files: 0, last_update: "2017/4/30" },
-            lihc: { cases: 374, files: 0, last_update: "2017/4/30" },
-            luad: { cases: 514, files: 0, last_update: "2017/4/30" },
-            lusc: { cases: 485, files: 0, last_update: "2017/4/30" },
-            meso: { cases:  83, files: 0, last_update: "2017/4/30" },
-            ov:   { cases:  67, files: 0, last_update: "2017/4/30" },
-            paad: { cases: 184, files: 0, last_update: "2017/4/30" },
-            pcpg: { cases: 179, files: 0, last_update: "2017/4/30" },
-            prad: { cases: 498, files: 0, last_update: "2017/4/30" },
-            read: { cases: 102, files: 0, last_update: "2017/4/30" },
-            sarc: { cases: 255, files: 0, last_update: "2017/4/30" },
-            skcm: { cases: 470, files: 0, last_update: "2017/4/30" },
-            stad: { cases: 441, files: 0, last_update: "2017/4/30" },
-            tgct: { cases: 150, files: 0, last_update: "2017/4/30" },
-            thca: { cases: 496, files: 0, last_update: "2017/4/30" },
-            thym: { cases: 123, files: 0, last_update: "2017/4/30" },
-            ucec: { cases: 456, files: 0, last_update: "2017/4/30" },
-            ucs:  { cases:  57, files: 0, last_update: "2017/4/30" },
-            uvm:  { cases:  80, files: 0, last_update: "2017/4/30" },
+        data: {
+            exome: {
+                acc:  { cases:  92, files: 0, last_update: "2017/4/30" },
+                blca: { cases: 412, files: 0, last_update: "2017/4/30" },
+                brca: { cases: 829, files: 0, last_update: "2017/4/30" },
+                cesc: { cases: 305, files: 0, last_update: "2017/4/30" },
+                chol: { cases:  51, files: 0, last_update: "2017/4/30" },
+                coad: { cases: 323, files: 0, last_update: "2017/4/30" },
+                dlbc: { cases:  48, files: 0, last_update: "2017/4/30" },
+                esca: { cases: 184, files: 0, last_update: "2017/4/30" },
+                gbm:  { cases: 316, files: 0, last_update: "2017/4/30" },
+                hnsc: { cases: 510, files: 0, last_update: "2017/4/30" },
+                kich: { cases:  66, files: 0, last_update: "2017/4/30" },
+                kirc: { cases: 376, files: 0, last_update: "2017/4/30" },
+                kirp: { cases: 288, files: 0, last_update: "2017/4/30" },
+                laml: { cases: 141, files: 0, last_update: "2017/4/30" },
+                lgg:  { cases: 516, files: 0, last_update: "2017/4/30" },
+                lihc: { cases: 374, files: 0, last_update: "2017/4/30" },
+                luad: { cases: 514, files: 0, last_update: "2017/4/30" },
+                lusc: { cases: 485, files: 0, last_update: "2017/4/30" },
+                meso: { cases:  83, files: 0, last_update: "2017/4/30" },
+                ov:   { cases:  67, files: 0, last_update: "2017/4/30" },
+                paad: { cases: 184, files: 0, last_update: "2017/4/30" },
+                pcpg: { cases: 179, files: 0, last_update: "2017/4/30" },
+                prad: { cases: 498, files: 0, last_update: "2017/4/30" },
+                read: { cases: 102, files: 0, last_update: "2017/4/30" },
+                sarc: { cases: 255, files: 0, last_update: "2017/4/30" },
+                skcm: { cases: 470, files: 0, last_update: "2017/4/30" },
+                stad: { cases: 441, files: 0, last_update: "2017/4/30" },
+                tgct: { cases: 150, files: 0, last_update: "2017/4/30" },
+                thca: { cases: 496, files: 0, last_update: "2017/4/30" },
+                thym: { cases: 123, files: 0, last_update: "2017/4/30" },
+                ucec: { cases: 456, files: 0, last_update: "2017/4/30" },
+                ucs:  { cases:  57, files: 0, last_update: "2017/4/30" },
+                uvm:  { cases:  80, files: 0, last_update: "2017/4/30" },
+            },
+            wgs: {},
+            rna: {
+                acc:  { cases:  79, files: 0, last_update: "2017/4/30" },
+                blca: { cases: 433, files: 0, last_update: "2017/4/30" },
+                brca: { cases:1256, files: 0, last_update: "2017/4/30" },
+                cesc: { cases: 309, files: 0, last_update: "2017/4/30" },
+                chol: { cases:  45, files: 0, last_update: "2017/4/30" },
+                coad: { cases: 546, files: 0, last_update: "2017/4/30" },
+                dlbc: { cases:  48, files: 0, last_update: "2017/4/30" },
+                esca: { cases: 198, files: 0, last_update: "2017/4/30" },
+                gbm:  { cases: 175, files: 0, last_update: "2017/4/30" },
+                hnsc: { cases: 566, files: 0, last_update: "2017/4/30" },
+                kich: { cases:  91, files: 0, last_update: "2017/4/30" },
+                kirc: { cases: 618, files: 0, last_update: "2017/4/30" },
+                kirp: { cases: 323, files: 0, last_update: "2017/4/30" },
+                laml: { cases: 179, files: 0, last_update: "2017/4/30" },
+                lgg:  { cases: 534, files: 0, last_update: "2017/4/30" },
+                lihc: { cases: 424, files: 0, last_update: "2017/4/30" },
+                luad: { cases: 601, files: 0, last_update: "2017/4/30" },
+                lusc: { cases: 555, files: 0, last_update: "2017/4/30" },
+                meso: { cases:  87, files: 0, last_update: "2017/4/30" },
+                ov:   { cases: 430, files: 0, last_update: "2017/4/30" },
+                paad: { cases: 183, files: 0, last_update: "2017/4/30" },
+                pcpg: { cases: 187, files: 0, last_update: "2017/4/30" },
+                prad: { cases: 558, files: 0, last_update: "2017/4/30" },
+                read: { cases: 177, files: 0, last_update: "2017/4/30" },
+                sarc: { cases: 265, files: 0, last_update: "2017/4/30" },
+                skcm: { cases: 473, files: 0, last_update: "2017/4/30" },
+                stad: { cases: 453, files: 0, last_update: "2017/4/30" },
+                tgct: { cases: 156, files: 0, last_update: "2017/4/30" },
+                thca: { cases: 572, files: 0, last_update: "2017/4/30" },
+                thym: { cases: 122, files: 0, last_update: "2017/4/30" },
+                ucec: { cases: 593, files: 0, last_update: "2017/4/30" },
+                ucs:  { cases:  57, files: 0, last_update: "2017/4/30" },
+                uvm:  { cases:  80, files: 0, last_update: "2017/4/30" },
+            },
+            rna_single: {
+                coad: { cases:  92, files:  92, last_update: "2017/4/30" },
+                read: { cases:  72, files:  72, last_update: "2017/4/30" },
+                ucec: { cases: 384, files: 384, last_update: "2017/4/30" },
+            },
         },
-        wgs: {},
-        rna: {
-            acc:  { cases:  79, files: 0, last_update: "2017/4/30" },
-            blca: { cases: 433, files: 0, last_update: "2017/4/30" },
-            brca: { cases:1256, files: 0, last_update: "2017/4/30" },
-            cesc: { cases: 309, files: 0, last_update: "2017/4/30" },
-            chol: { cases:  45, files: 0, last_update: "2017/4/30" },
-            coad: { cases: 546, files: 0, last_update: "2017/4/30" },
-            dlbc: { cases:  48, files: 0, last_update: "2017/4/30" },
-            esca: { cases: 198, files: 0, last_update: "2017/4/30" },
-            gbm:  { cases: 175, files: 0, last_update: "2017/4/30" },
-            hnsc: { cases: 566, files: 0, last_update: "2017/4/30" },
-            kich: { cases:  91, files: 0, last_update: "2017/4/30" },
-            kirc: { cases: 618, files: 0, last_update: "2017/4/30" },
-            kirp: { cases: 323, files: 0, last_update: "2017/4/30" },
-            laml: { cases: 179, files: 0, last_update: "2017/4/30" },
-            lgg:  { cases: 534, files: 0, last_update: "2017/4/30" },
-            lihc: { cases: 424, files: 0, last_update: "2017/4/30" },
-            luad: { cases: 601, files: 0, last_update: "2017/4/30" },
-            lusc: { cases: 555, files: 0, last_update: "2017/4/30" },
-            meso: { cases:  87, files: 0, last_update: "2017/4/30" },
-            ov:   { cases: 430, files: 0, last_update: "2017/4/30" },
-            paad: { cases: 183, files: 0, last_update: "2017/4/30" },
-            pcpg: { cases: 187, files: 0, last_update: "2017/4/30" },
-            prad: { cases: 558, files: 0, last_update: "2017/4/30" },
-            read: { cases: 177, files: 0, last_update: "2017/4/30" },
-            sarc: { cases: 265, files: 0, last_update: "2017/4/30" },
-            skcm: { cases: 473, files: 0, last_update: "2017/4/30" },
-            stad: { cases: 453, files: 0, last_update: "2017/4/30" },
-            tgct: { cases: 156, files: 0, last_update: "2017/4/30" },
-            thca: { cases: 572, files: 0, last_update: "2017/4/30" },
-            thym: { cases: 122, files: 0, last_update: "2017/4/30" },
-            ucec: { cases: 593, files: 0, last_update: "2017/4/30" },
-            ucs:  { cases:  57, files: 0, last_update: "2017/4/30" },
-            uvm:  { cases:  80, files: 0, last_update: "2017/4/30" },
-        },
-        rna_single: {
-            coad: { cases:  92, files:  92, last_update: "2017/4/30" },
-            read: { cases:  72, files:  72, last_update: "2017/4/30" },
-            ucec: { cases: 384, files: 384, last_update: "2017/4/30" },
+        report: {
         },
     },
 };
@@ -173,21 +188,18 @@ db.get_topdata_tree = function () {
 
     var di = {};
     for (var group in db.projects) {
-        for (var str in db.projects[group]) {
-            if (str == "label") {
-                continue;
-            }
-            for (var dis in db.projects[group][str]) {
+        for (var str in db.projects[group].data) {
+            for (var dis in db.projects[group].data[str]) {
                 var name = dis;
-                if ("parent_id" in db.projects[group][str][dis]) {
-                    name = db.projects[group][str][dis].parent_id;
+                if ("parent_id" in db.projects[group].data[str][dis]) {
+                    name = db.projects[group].data[str][dis].parent_id;
                 }
                 var key = name + "@" + str;
                 if (key in di) {
-                    di[key] += db.projects[group][str][dis].cases;
+                    di[key] += db.projects[group].data[str][dis].cases;
                 }
                 else {
-                    di[key] = db.projects[group][str][dis].cases;
+                    di[key] = db.projects[group].data[str][dis].cases;
                 }
             }
         }
@@ -198,7 +210,7 @@ db.get_topdata_tree = function () {
         [name, str] = key.split("@");
         result.push({parent: str, name: name, value: di[key]});
     }
-    console.log(result);
+//    console.log(result);
     return result;
 };
 
@@ -228,19 +240,16 @@ db.get_topdata_bar = function () {
     }
     
     for (var group in db.projects) {
-        for (var str in db.projects[group]) {
-            if (str == "label") {
-                continue;
-            }
-            for (var dis in db.projects[group][str]) {
+        for (var str in db.projects[group].data) {
+            for (var dis in db.projects[group].data[str]) {
                 var site;
-                if ("parent_id" in db.projects[group][str][dis]) {
-                    site = db.disease[db.projects[group][str][dis].parent_id].site;
+                if ("parent_id" in db.projects[group].data[str][dis]) {
+                    site = db.disease[db.projects[group].data[str][dis].parent_id].site;
                 }
                 else {
                     site = db.disease[dis].site;
                 }
-                result[str][result.site.indexOf(site)] += db.projects[group][str][dis].cases;
+                result[str][result.site.indexOf(site)] += db.projects[group].data[str][dis].cases;
             }
         }
     }
@@ -251,6 +260,8 @@ db.get_topdata_bar = function () {
 db.get_groupdata_bar = function (group) {
 
     var result = {
+        key: [],
+        child: [],
         disease: [],
         exome: [],
         wgs: [],
@@ -264,10 +275,10 @@ db.get_groupdata_bar = function (group) {
     }
     var dis_id = [];
     for (var str in db.strategy) {
-        if ((str in db.projects[group]) == false){
+        if ((str in db.projects[group].data) == false){
             continue;
         }
-        for (var key in db.projects[group][str]) {
+        for (var key in db.projects[group].data[str]) {
             if (dis_id.indexOf(key) < 0) {
                 dis_id.push(key);
             }
@@ -278,28 +289,35 @@ db.get_groupdata_bar = function (group) {
     for (var d in dis_id) {
         var dis = dis_id[d];
         var label;
+        var child = false;
         
         for (var str in db.strategy) {
-            if ((str in db.projects[group]) == false) {
+            if ((str in db.projects[group].data) == false) {
                 result[str].push(0);
             }
-            else if ((dis in db.projects[group][str]) == false) {
+            else if ((dis in db.projects[group].data[str]) == false) {
                 result[str].push(0);
             }
             else {
-                result[str].push(db.projects[group][str][dis].cases);
+                result[str].push(db.projects[group].data[str][dis].cases);
                 
-                if ("label" in db.projects[group][str][dis]){
-                    label = db.projects[group][str][dis].label;
+                if ("label" in db.projects[group].data[str][dis]){
+                    label = db.projects[group].data[str][dis].label;
                 }
-                else if ("parent_id" in db.projects[group][str][dis]){
-                    label = db.disease[db.projects[group][str][dis].parent_id].label;
+                else if ("parent_id" in db.projects[group].data[str][dis]){
+                    label = db.disease[db.projects[group].data[str][dis].parent_id].label;
                 }
                 else {
                     label = db.disease[dis].label;
                 }
+                
+                if (child == false) {
+                    child = "parent_id" in db.projects[group].data[str][dis];
+                }
             }
         }
+        result.child.push(child);
+        result.key.push(dis);
         result.disease.push(label);
     }
 //    console.log(result);
@@ -320,17 +338,36 @@ db.get_projectdata_pie = function (group, disease) {
         return result;
     }
     for (var str in db.strategy) {
-        if ((str in db.projects[group]) == false){
+        if ((str in db.projects[group].data) == false){
             continue;
         }
-        if ((disease in db.projects[group][str]) == false){
+        if ((disease in db.projects[group].data[str]) == false){
             continue;
         }
-        result[str] = db.projects[group][str][disease].cases
+        result[str] = db.projects[group].data[str][disease].cases
     }
 //    console.log(result);
     return result;
 };
+
+db.get_lastupdate = function (group, disease) {
+    
+    var arr = [];
+    
+    for (var str in db.projects[group].data) {
+        if (disease in db.projects[group].data[str]) {
+            arr.push(Date.parse(db.projects[group].data[str][disease].last_update));
+        }
+    }
+
+    arr.sort(function(a,b) {
+        return (a < b ? 1 : -1);
+    });
+    var date = new Date(arr[0]);
+
+    return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
+};
+
 
 })();
 Object.freeze(db);

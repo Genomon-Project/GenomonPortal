@@ -4,11 +4,30 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/graph.css"/>
     <title>GenomonPortal-ICGC-HCC</title>
     
   </head>
   <body>
-    <div id="plot" style="min-width: 100px; height: 300px; margin: 0 auto;"></div>
+    <h1 id="title">header</h1>
+    <p id="date">last update</p>
+    
+    <div class="frame">
+      <div class="box" style="width:50%">
+        <h2>Summary</h2>
+        <table id="summary"></table>
+      </div>
+      <div class="box">
+        <div id="pie" class="pie"></div>
+      </div>
+    </div>
+
+    <h2>Sequence Data</h2>
+    <table id ="table"></table>
+
+    <h2>Reports</h2>
+    <ul id ="report"></ul>
 
     <!-- highcharts -->
     <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
@@ -18,7 +37,7 @@
     <script src="js/draw.js"></script>
     <script src="js/db.js"></script>
     <script type="text/javascript">
-      draw.project_pie ('plot', 'icgc_riken', 'hcc');
+      draw.project_page ('icgc_riken', 'hcc');
     </script>
     </script>
   </body>

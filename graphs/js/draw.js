@@ -42,6 +42,7 @@ draw.group_bar = function (id, group) {
             { name: db.strategy.rna_single.label, color: db.strategy.rna_single.color, data: data.rna_single},
         ]
     });
+    return data;
 };
 
 draw.project_pie = function (id, group, disease) {
@@ -178,6 +179,54 @@ draw.index_tree = function (id) {
     });
 };
 
+draw.index_summary = function (id) {
+    
+    var disease = [];
+    var projects = [];
+    var cases = 0;
+    
+    for (var group in db.projects) {
+        for (var str in db.projects[group].data) {
+            for (var dis in db.projects[group].data[str]) {
+                if ("parent_id" in db.projects[group].data[str][dis]) {
+                    continue;
+                }
+                if (db.projects[group].data[str][dis].cases < 1) {
+                    continue;
+                }
+                if (disease.indexOf(dis) < 0) {
+                    disease.push(dis);
+                }
+                if (projects.indexOf(dis + "@" + group) < 0) {
+                    projects.push(dis + "@" + group);
+                }
+                cases += db.projects[group].data[str][dis].cases;
+            }
+        }
+    }
+    // console.log(projects);
+    // console.log(disease);
+    var data = [
+        ["Groups", Object.keys(db.projects).length],
+        ["Projects", projects.length],
+        ["Disease Types", disease.length],
+        ["Cases", cases],
+    ];
+    
+    var table = document.getElementById(id);
+    table.setAttribute("class", "common");
+    
+    for (var i in data) {
+        var row = table.insertRow();
+        var cell1 = row.insertCell();
+         cell1.setAttribute("class", "common");
+        cell1.appendChild(document.createTextNode(data[i][0]));
+        var cell2 = row.insertCell();
+        cell2.setAttribute("class", "common");
+        cell2.appendChild(document.createTextNode(data[i][1]));
+    }
+};
+
 draw.project_summary = function (id, group, disease) {
     
     var data = [
@@ -188,11 +237,16 @@ draw.project_summary = function (id, group, disease) {
     ];
     
     var table = document.getElementById(id);
+    table.setAttribute("class", "common");
     
     for (var i in data) {
         var row = table.insertRow();
-        row.insertCell().appendChild(document.createTextNode(data[i][0]));
-        row.insertCell().appendChild(document.createTextNode(data[i][1]));
+        var cell1 = row.insertCell();
+         cell1.setAttribute("class", "common");
+        cell1.appendChild(document.createTextNode(data[i][0]));
+        var cell2 = row.insertCell();
+        cell2.setAttribute("class", "common");
+        cell2.appendChild(document.createTextNode(data[i][1]));
     }
 };
 
@@ -205,41 +259,115 @@ draw.project_table = function (id, group, disease) {
             + ';"></i>' 
             + db.strategy[str].label;
         
-        if (((str in db.projects[group]) == false) || ((disease in db.projects[group][str]) == false)) {
-            data.push([str_title,0,0,'---','']);
+        if (((str in db.projects[group].data) == false) || ((disease in db.projects[group].data[str]) == false)) {
+            data.push([str_title,0,0,'---','---']);
             continue;
         }
         var add = [];
         add[0] = str_title;
-        add[1] = db.projects[group][str][disease].cases;
-        add[2] = db.projects[group][str][disease].files;
+        add[1] = db.projects[group].data[str][disease].cases;
+        add[2] = db.projects[group].data[str][disease].files;
         
-        add[3] = '<a href="' + '#' + '" class="fa fa-external-link btn" aria-hidden="true"></a> '
+        add[3] = '<a href="' + '#' + '" class="fa fa-external-link btn" aria-hidden="true"></a>'
             + '<a href="' + '#' + '" class="fa fa-download btn" aria-hidden="true"></a>';
-        add[4] = db.projects[group][str][disease].last_update;
+        add[4] = db.projects[group].data[str][disease].last_update;
         data.push(add);
     }
     
     var table = document.getElementById(id);
+    table.setAttribute("class", "common");
     
     // tbody
     for (var i in data) {
         var row = table.insertRow();
-        row.insertCell().outerHTML = '<td style="text-align: left">' + data[i][0] + '</td>';
-        row.insertCell().outerHTML = '<td style="text-align: right">' + data[i][1] + '</td>';
-        row.insertCell().outerHTML = '<td style="text-align: right">' + data[i][2] + '</td>';
-        row.insertCell().outerHTML = '<td style="text-align: center">' + data[i][3] + '</td>';
-        row.insertCell().outerHTML = '<td style="text-align: right">' + data[i][4] + '</td>';
+        row.insertCell().outerHTML = '<td class="common" style="text-align: left">' + data[i][0] + '</td>';
+        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + data[i][1] + '</td>';
+        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + data[i][2] + '</td>';
+        row.insertCell().outerHTML = '<td class="common" style="text-align: center">' + data[i][3] + '</td>';
+        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + data[i][4] + '</td>';
     }
     
     // theader
     var header = table.createTHead();
+    header.setAttribute("class", "common");
     var hrow = header.insertRow();
-    hrow.insertCell().outerHTML = '<th style="text-align: left">Experimental Strategy</th>';
-    hrow.insertCell().outerHTML = '<th style="text-align: right"># Cases</th>';
-    hrow.insertCell().outerHTML = '<th style="text-align: right"># Files</th>';
-    hrow.insertCell().outerHTML = '<th style="text-align: center">Analyzed data</th>';
-    hrow.insertCell().outerHTML = '<th style="text-align: right">Last Updated (yyyy/mm/dd)</th>';
+    hrow.insertCell().outerHTML = '<th class="common" style="text-align: left">Experimental Strategy</th>';
+    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right"># Cases</th>';
+    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right"># Files</th>';
+    hrow.insertCell().outerHTML = '<th class="common" style="text-align: center">Analyzed data</th>';
+    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right">Last Updated (yyyy/mm/dd)</th>';
+};
+
+
+draw.group_table = function (id, group, data) {
+
+    var table = document.getElementById(id);
+    table.setAttribute("class", "common");
+    var li = ["exome", "wgs", "target", "rna", "rna_single"];
+    
+    // tbody
+    var row_count = 0;
+    for (var j in data.disease) {
+        if (data.child[j] == true) {
+            continue;
+        }
+        row_count += 1;
+        var row = table.insertRow();
+        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + row_count + '</td>';
+        row.insertCell().outerHTML = '<td class="common" style="text-align: left"><a href="'
+            + '../analysis/' + group + '/' + data.key[j] + '" target=' + group + '_' + data.key[j] + '>'
+            + data.disease[j] + '</a></td>';
+        for (var i in li) {
+            row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + data[li[i]][j] + '</td>';
+        }
+        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + db.get_lastupdate (group, data.key[j]) + '</td>';
+    }
+    
+    // theader
+    var header = table.createTHead();
+    header.setAttribute("class", "common");
+    var hrow = header.insertRow();
+    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right">#</th>';
+    hrow.insertCell().outerHTML = '<th class="common" style="text-align: left">Cancer Types</th>';
+
+
+    for (var i in li) {
+        hrow.insertCell().outerHTML = '<th class="common" style="text-align: right"># Cases (' + db.strategy[li[i]].label + ')</th>';
+    }
+    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right">Last Updated (yyyy/mm/dd)</th>';
+    
+    return row_count;
+};
+
+draw.project_report = function (id, group, disease) {
+
+    var ul = document.getElementById(id);
+
+    if (((disease in db.projects[group].report) == false)
+      || (db.projects[group].report[disease] < 1)) {
+        ul.setAttribute("class", "report_title");
+        ul.innerHTML = "no data";
+        return;
+    }
+    
+    for (var i in db.projects[group].report[disease]) {
+
+       var li = document.createElement("li");
+       li.setAttribute("class", "report_title");
+       
+       if (("link" in db.projects[group].report[disease][i]) 
+        && (db.projects[group].report[disease][i].link.length > 0)) {
+           var a = document.createElement("a");
+           a.setAttribute("href", db.projects[group].report[disease][i].link);
+           a.innerHTML = db.projects[group].report[disease][i].title;
+           li.appendChild(a);
+       }
+       else {
+           li.innerHTML = db.projects[group].report[disease][i].title;
+       }
+       
+       ul.appendChild(li);
+    }
 };
 
 draw.project_page = function (group, disease) {
@@ -248,10 +376,19 @@ draw.project_page = function (group, disease) {
         + db.disease[disease].label;
     var date = document.getElementById('date');
     date.innerHTML = '<i class="fa fa-clock-o pre_text" aria-hidden="true"></i> Last Update '
-        + db.disease[disease].label;
+        + db.get_lastupdate (group, disease);
     draw.project_summary ('summary', group, disease);
     draw.project_pie ('pie', group, disease);
     draw.project_table ('table', group, disease);
+    draw.project_report ('report', group, disease);
+};
+
+draw.group_page = function (group, disease) {
+
+    var data = draw.group_bar('plot', group);
+    var num = draw.group_table ('table', group, data);
+    var title = document.getElementById('project');
+    title.innerHTML = 'Projects (' + num + ')';
 };
 
 })();

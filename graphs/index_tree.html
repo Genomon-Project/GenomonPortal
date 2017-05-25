@@ -4,11 +4,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/graph.css"/>
     <title>GenomonPortal-index</title>
     
   </head>
   <body>
-    <div id="plot" style="min-width: 100px; height: 300px; margin: 0 auto"></div>
+
+    <div class="frame">
+      <div class="box" style="width:70%">
+        <div id="plot" class="tree"></div>
+      </div>
+      
+      <div class="box">
+        <h3>Data Availability Summary</h3>
+        <table id="table"></table>
+      </div>
+    </div>
 
     <!-- highcharts -->
     <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
@@ -18,7 +30,8 @@
     <script src="js/draw.js"></script>
     <script src="js/db.js"></script>
     <script type="text/javascript">
-        draw.index_tree('plot');
+      draw.index_tree('plot');
+      draw.index_summary('table');
     </script>
   </body>
 </html>
