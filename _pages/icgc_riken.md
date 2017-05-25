@@ -28,14 +28,5 @@ Japan
 </div>
 
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken.html" style="height:450px; margin-top:50px;"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken.html" style="height:700px; margin-top:50px;"></iframe>
 {:/nomarkdown}
-
-## Projects (1)
-
-
-| # | Cancer Types            | # Cases (exome) | # Cases (wgs) | # Cases (target) | # Cases (rna-seq) | Last Updated (yyyy/mm/dd) |
-|--:|:------------------------|----------------:|--------------:|-----------------:|------------------:|--------------------------:|
-| 1 | [RCC](./icgc_riken/rcc) |               0 |           300 |                0 |               247 | 2017/03/30 |
-
-
