@@ -28,5 +28,5 @@ Japan
 </div>
 
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken.html" style="height:700px; margin-top:50px;"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken.html" style="height:700px; margin-top:50px;" scrolling="no" frameborder="no"></iframe>
 {:/nomarkdown}
