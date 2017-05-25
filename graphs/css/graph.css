@@ -9,7 +9,8 @@
 }
 
 html {
-    font-size: 18px;
+//    font-size: 18px;
+    font-size: 1em;
     -webkit-text-size-adjust: 100%;
 }
 body {
