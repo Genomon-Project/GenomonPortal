@@ -31,10 +31,10 @@ Last updated on 2017/5/11
 
 | Experimental Strategy                     | # Cases | # Files | Last Updated (yyyy/mm/dd) | Analyzed data |
 |:------------------------------------------|--------:|--------:|--------------------------:|:-------------:|
-| <font class="pre-exome"></font> EXOME     |      81 |     162 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
-| <font class="pre-wgs"></font>   WGS       |      26 |      52 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <font class="pre-exome"></font> EXOME     |      81 |     162 |                 2017/4/30 | <a href="http://genomon-project.github.io/paplot/" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <font class="pre-wgs"></font>   WGS       |      26 |      52 |                 2017/4/30 | <a href="http://genomon-project.github.io/paplot/" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
 | <font class="pre-target"></font>TARGET    |       0 |       0 |                 ---       |  |
-| <font class="pre-rna"></font>   RNA       |      99 |     198 |                 2017/4/30 | <a href="#" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
+| <font class="pre-rna"></font>   RNA       |      99 |     198 |                 2017/4/30 | <a href="http://genomon-project.github.io/paplot/" class="btn btn--external-link"></a> <a href="#" class="btn btn--download"></a> |
 | <font class="pre-rna-s"></font> RNA_single|       0 |       0 |                 ---       |  |
 
 ## Reports
