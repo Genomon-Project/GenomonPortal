@@ -31,10 +31,10 @@ Japan
 <iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken.html" style="height:700px; margin-top:50px;" scrolling="no" frameborder="no"></iframe>
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/vendor/jquery/jquery-1.12.4.min.js" ></script>
 <script>
-$('iframe')
+jquery('iframe')
 .on('load', function(){
   try {  
-    $(this).height(this.contentWindow.document.documentElement.scrollHeight);
+    jquery(this).height(this.contentWindow.document.documentElement.scrollHeight);
   } catch (e) {
   }
 })
