@@ -391,4 +391,10 @@ draw.group_page = function (group, disease) {
     title.innerHTML = 'Projects (' + num + ')';
 };
 
+draw.parent_frame = function () {
+
+    var parent = document.getElementById("parent");
+    parent.setAttribute("height", document.body.scrollHeight);
+};
+
 })();

@@ -23,5 +23,5 @@ Seishi Ogawa M.D., Ph.D., Professor
 </div>
 
 {::nomarkdown}
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html" frameborder="0" height="100%" width="100%" scrolling="no" frameborder="no"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/ogawalab.html" scrolling="no" frameborder="no" id="parent"></iframe>
 {:/nomarkdown}
