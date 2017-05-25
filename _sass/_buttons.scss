@@ -150,30 +150,4 @@
   &--small {
     font-size: $type-size-7;
   }
-
-  /* custom button */
- 
-  &--external-link {
-    color: #FFF;
-    background-color: #265A88;
-    &:hover {
-      background-color: mix(#000, #265A88, 20%);
-    }
-    &:before {
-      content: $fa-var-external-link;
-      font-family: FontAwesome;
-    }
-  }
-
-  &--download {
-    color: #FFF;
-    background-color: #265A88;
-    &:hover {
-      background-color: mix(#000, #265A88, 20%);
-    }
-    &:before {
-      content: $fa-var-download;
-      font-family: FontAwesome;
-    }
-  }
 }

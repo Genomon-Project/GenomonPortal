@@ -473,64 +473,10 @@ a.reversefootnote {
    Custom
    ========================================================================== */
 
-.pre-exome {
-  margin-right: 5px;
-  color: $exome-color;
-  &:before {
-    content: $fa-var-square;
-    font-family: FontAwesome;
-  }
-}
-.pre-wgs {
-  margin-right: 5px;
-  color: $wgs-color;
-  &:before {
-    content: $fa-var-square;
-    font-family: FontAwesome;
-  }
-}
-.pre-target {
-  margin-right: 5px;
-  color: $target-color;
-  &:before {
-    content: $fa-var-square;
-    font-family: FontAwesome;
-  }
-}
-.pre-rna {
-  margin-right: 5px;
-  color: $rna-color;
-  &:before {
-    content: $fa-var-square;
-    font-family: FontAwesome;
-  }
-}
-.pre-rna-s {
-  margin-right: 5px;
-  color: $rna-s-color;
-  &:before {
-    content: $fa-var-square;
-    font-family: FontAwesome;
-  }
-}
-.pre-link {
-  margin-right: 5px;
-  &:before {
-    content: $fa-var-arrow-right;
-    font-family: FontAwesome;
-  }
-}
 .pre-group {
   margin-right: 5px;
   &:before {
     content: $fa-var-flask;
-    font-family: FontAwesome;
-  }
-}
-.pre-project {
-  margin-right: 5px;
-  &:before {
-    content: $fa-var-align-left;
     font-family: FontAwesome;
   }
 }
@@ -539,18 +485,6 @@ iframe {
   border: none;
   width: 100%;
 }
-.frame {
-  border-collapse: separate;
-  border-spacing: 0px 10px;
-  display: table;
-  width: 100%;
-}
-.box {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 10px;
-}
-
 
 @mixin labinfo($notice-color) {
   margin: 2em 0 !important;  /* override*/
