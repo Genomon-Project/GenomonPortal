@@ -6,4 +6,4 @@ layout: splash
 
 [Analysis]({{ site.url }}{{ site.baseurl }}/analysis) > [icgc_riken]({{ site.url }}{{ site.baseurl }}/analysis/icgc_riken)> HCC
 
-<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken_hcc.html" style="height:700px; margin-top:10px;" scrolling="no" frameborder="no"></iframe>
+<iframe src="{{ site.url }}{{ site.baseurl }}/graphs/icgc_riken_hcc.html" style="height:1000px; margin-top:10px;" scrolling="no" frameborder="no"></iframe>
