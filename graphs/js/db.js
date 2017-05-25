@@ -157,7 +157,17 @@ db.projects = {
         },
     },
 };
-db.str_type = ["exome", "wgs", "target", "rna", "rna_single"];
+db.strategy = {
+    exome:      {label:'EXOME', color:"#7cb5ec"},      // blue
+    wgs:        {label:'WGS', color:"#90ed7d"},        // light-green
+    target:     {label:'TARGET', color:"#8085e9"},     // purple
+    rna:        {label:'RNA', color:"#f7a35c"},        // orange
+    rna_single: {label:'RNA-single', color:"#f15c80"}, // pink
+//    mirna:      {label:'miRNA', color:"#e4d354"},      // yellow
+//    dummy1:     {label:'', color:"#2b908f"},           // dark-green
+//    dummy2:     {label:'', color:"#f45b5b"},           // pink
+//    dummy3:     {label:'', color:"#91e8e1"},           // light-blue
+};
 
 db.get_topdata_tree = function () {
 
@@ -212,8 +222,8 @@ db.get_topdata_bar = function () {
     result.site = result.site.sort();
     
     for (var i in result.site) {
-        for (var s in db.str_type) {
-            result[db.str_type[s]].push(0);
+        for (var str in db.strategy) {
+            result[str].push(0);
         }
     }
     
@@ -253,8 +263,7 @@ db.get_groupdata_bar = function (group) {
         return result;
     }
     var dis_id = [];
-    for (var s in db.str_type) {
-        var str = db.str_type[s];
+    for (var str in db.strategy) {
         if ((str in db.projects[group]) == false){
             continue;
         }
@@ -270,8 +279,7 @@ db.get_groupdata_bar = function (group) {
         var dis = dis_id[d];
         var label;
         
-        for (var s in db.str_type) {
-            var str = db.str_type[s];
+        for (var str in db.strategy) {
             if ((str in db.projects[group]) == false) {
                 result[str].push(0);
             }
@@ -311,8 +319,7 @@ db.get_projectdata_pie = function (group, disease) {
     if ((group in db.projects) == false) {
         return result;
     }
-    for (var s in db.str_type) {
-        var str = db.str_type[s];
+    for (var str in db.strategy) {
         if ((str in db.projects[group]) == false){
             continue;
         }

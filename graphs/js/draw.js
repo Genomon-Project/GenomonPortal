@@ -35,11 +35,11 @@ draw.group_bar = function (id, group) {
             }
         },
         series: [
-          { name: style.label_exome, color: style.color_exome, data: data.exome, },
-          { name: style.label_wgs__, color: style.color_wgs__, data: data.wgs, },
-          { name: style.label_targt, color: style.color_targt, data: data.target, },
-          { name: style.label_rna_p, color: style.color_rna_p, data: data.rna, },
-          { name: style.label_rna_s, color: style.color_rna_s, data: data.rna_single, },
+            { name: db.strategy.exome.label, color: db.strategy.exome.color, data: data.exome}, 
+            { name: db.strategy.wgs.label, color: db.strategy.wgs.color, data: data.wgs},
+            { name: db.strategy.target.label, color: db.strategy.target.color, data: data.target},
+            { name: db.strategy.rna.label, color: db.strategy.rna.color, data: data.rna},
+            { name: db.strategy.rna_single.label, color: db.strategy.rna_single.color, data: data.rna_single},
         ]
     });
 };
@@ -73,12 +73,12 @@ draw.project_pie = function (id, group, disease) {
             name: 'Cases',
             colorByPoint: true,
             data: [
-                    { name: style.label_exome, color: style.color_exome, y: data.exome, sliced: false, selected: false}, 
-                    { name: style.label_wgs__, color: style.color_wgs__, y: data.wgs},
-                    { name: style.label_targt, color: style.color_targt, y: data.target},
-                    { name: style.label_rna_p, color: style.color_rna_p, y: data.rna},
-                    { name: style.label_rna_s, color: style.color_rna_s, y: data.rna_single},
-                  ]
+                { name: db.strategy.exome.label, color: db.strategy.exome.color, y: data.exome, sliced: false, selected: false}, 
+                { name: db.strategy.wgs.label, color: db.strategy.wgs.color, y: data.wgs},
+                { name: db.strategy.target.label, color: db.strategy.target.color, y: data.target},
+                { name: db.strategy.rna.label, color: db.strategy.rna.color, y: data.rna},
+                { name: db.strategy.rna_single.label, color: db.strategy.rna_single.color, y: data.rna_single},
+            ]
         }]
     });
 };
@@ -132,23 +132,23 @@ draw.index_bar = function (id) {
             }
         },
         series: [
-                  { name: style.label_exome, color: style.color_exome, data: data.exome },
-                  { name: style.label_wgs__, color: style.color_wgs__, data: data.wgs },
-                  { name: style.label_targt, color: style.color_targt, data: data.target },
-                  { name: style.label_rna_p, color: style.color_rna_p, data: data.rna },
-                  { name: style.label_rna_s, color: style.color_rna_s, data: data.rna_single },
-                ]
+            { name: db.strategy.exome.label, color: db.strategy.exome.color, data: data.exome}, 
+            { name: db.strategy.wgs.label, color: db.strategy.wgs.color, data: data.wgs},
+            { name: db.strategy.target.label, color: db.strategy.target.color, data: data.target},
+            { name: db.strategy.rna.label, color: db.strategy.rna.color, data: data.rna},
+            { name: db.strategy.rna_single.label, color: db.strategy.rna_single.color, data: data.rna_single},
+        ]
     });
 };
 
 draw.index_tree = function (id) {
     var data = db.get_topdata_tree();
     var parent = [
-        { id: 'exome', name: style.label_exome, color: style.color_exome },
-        { id: 'wgs', name: style.label_wgs__, color: style.color_wgs__ },
-        { id: 'target', name: style.label_targt, color: style.color_targt },
-        { id: 'rna', name: style.label_rna_p, color: style.color_rna_p },
-        { id: 'rna_single', name: style.label_rna_s, color: style.color_rna_s },
+        { id: 'exome', name: db.strategy.exome.label, color: db.strategy.exome.color },
+        { id: 'wgs', name: db.strategy.wgs.label, color: db.strategy.wgs.color },
+        { id: 'target', name: db.strategy.target.label, color: db.strategy.target.color },
+        { id: 'rna', name: db.strategy.rna.label, color: db.strategy.rna.color },
+        { id: 'rna_single', name: db.strategy.rna_single.label, color: db.strategy.rna_single.color },
     ];
     var concat = parent.concat(data);
 
@@ -177,4 +177,81 @@ draw.index_tree = function (id) {
         }
     });
 };
+
+draw.project_summary = function (id, group, disease) {
+    
+    var data = [
+        ["Project Name", db.disease[disease].label],
+        ["Disease Type", db.disease[disease].type],
+        ["Primary Site", db.disease[disease].site],
+        ["Group", db.projects[group].label],
+    ];
+    
+    var table = document.getElementById(id);
+    
+    for (var i in data) {
+        var row = table.insertRow();
+        row.insertCell().appendChild(document.createTextNode(data[i][0]));
+        row.insertCell().appendChild(document.createTextNode(data[i][1]));
+    }
+};
+
+draw.project_table = function (id, group, disease) {
+    
+    var data = [];
+    for (var str in db.strategy) {
+        var str_title = '<i class="fa fa-square pre_text" aria-hidden="true" style="color:'
+            + db.strategy[str].color
+            + ';"></i>' 
+            + db.strategy[str].label;
+        
+        if (((str in db.projects[group]) == false) || ((disease in db.projects[group][str]) == false)) {
+            data.push([str_title,0,0,'---','']);
+            continue;
+        }
+        var add = [];
+        add[0] = str_title;
+        add[1] = db.projects[group][str][disease].cases;
+        add[2] = db.projects[group][str][disease].files;
+        
+        add[3] = '<a href="' + '#' + '" class="fa fa-external-link btn" aria-hidden="true"></a> '
+            + '<a href="' + '#' + '" class="fa fa-download btn" aria-hidden="true"></a>';
+        add[4] = db.projects[group][str][disease].last_update;
+        data.push(add);
+    }
+    
+    var table = document.getElementById(id);
+    
+    // tbody
+    for (var i in data) {
+        var row = table.insertRow();
+        row.insertCell().outerHTML = '<td style="text-align: left">' + data[i][0] + '</td>';
+        row.insertCell().outerHTML = '<td style="text-align: right">' + data[i][1] + '</td>';
+        row.insertCell().outerHTML = '<td style="text-align: right">' + data[i][2] + '</td>';
+        row.insertCell().outerHTML = '<td style="text-align: center">' + data[i][3] + '</td>';
+        row.insertCell().outerHTML = '<td style="text-align: right">' + data[i][4] + '</td>';
+    }
+    
+    // theader
+    var header = table.createTHead();
+    var hrow = header.insertRow();
+    hrow.insertCell().outerHTML = '<th style="text-align: left">Experimental Strategy</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: right"># Cases</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: right"># Files</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: center">Analyzed data</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: right">Last Updated (yyyy/mm/dd)</th>';
+};
+
+draw.project_page = function (group, disease) {
+    var title = document.getElementById('title');
+    title.innerHTML = '<i class="fa fa-align-left" aria-hidden="true" style="margin-right: 10px;"></i>' 
+        + db.disease[disease].label;
+    var date = document.getElementById('date');
+    date.innerHTML = '<i class="fa fa-clock-o pre_text" aria-hidden="true"></i> Last Update '
+        + db.disease[disease].label;
+    draw.project_summary ('summary', group, disease);
+    draw.project_pie ('pie', group, disease);
+    draw.project_table ('table', group, disease);
+};
+
 })();
