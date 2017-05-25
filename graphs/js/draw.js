@@ -394,7 +394,7 @@ draw.group_page = function (group, disease) {
 draw.parent_frame = function () {
 
     var parent = document.getElementById("parent");
-    parent.setAttribute("height", document.body.scrollHeight);
+    parent.setAttribute("height", document.body.scrollHeight + "px");
 };
 
 })();
