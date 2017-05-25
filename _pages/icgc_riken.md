@@ -39,5 +39,6 @@ $('iframe')
   }
 })
 .trigger('load');
+console.log("demo");
 </script>
 {:/nomarkdown}
