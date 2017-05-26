@@ -1,11 +1,29 @@
 (function(){
 page = {};
 
+page.style = function () {
+
+    var body = document.getElementsByTagName("body")[0];
+    body.style["font-family"] = '-apple-system,"Noto Sans JP",".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif';
+    body.style["font-size"] = '1.5em';
+    body.style["line-height"] = '1.5';
+};
+
 page.header = function (id, root, active) {
 
     var header = document.getElementById(id);
-    header.innerHTML = `    <img src="{root}/images/header-hgc.png" / style="width:400px; padding:30px" >
-
+    var active_class =["","",""];
+    if (active == "analysis") {
+      active_class[0] = 'class="active"';
+    }
+    else if (active == "about") {
+      active_class[1] = 'class="active"';
+    }
+    else if (active == "contact") {
+      active_class[2] = 'class="active"';
+    }
+    
+    header.innerHTML = (`    <img src="{root}/images/header-hgc.png" / style="width:400px; padding:30px" >
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -16,66 +34,42 @@ page.header = function (id, root, active) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Genomon Portal</a>
+          <a class="navbar-brand" href="{root}/index.html">Genomon Portal</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{root}/index.html">Home</a></li>
-
-            <!-- <li class="active"><a href="#about">Access Data</a></li> -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Access Data<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Select from Cancer Type</a></li>
-                <li><a href="#">Select from Group</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">document</li>
-                <li><a href="#">About Data</a></li>
-              </ul>
-            </li>
-
-            <li><a href="#submit">Submit Fata</a></li>
-            <li><a href="#develop">For Developers</a></li>
-            <li><a href="#support">Support</a></li>
-            <li><a href="#news">News</a></li>
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">About Genomon</a></li>
-                <li><a href="#">About the Data</a></li>
-                <li><a href="#">About Us</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+            <li ` + active_class[0] + `><a href="{root}/analysis/analysis.html">Analysis</a></li>
+            <li ` + active_class[1] + `><a href="{root}/pages/about.html">About the GP</a></li>
+            <li ` + active_class[2] + `><a href="{root}/pages/contact.html">Contact Us</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <form class="navbar-form navbar-left" role="search">
+            <form class="navbar-form navbar-left" role="search" action="http://www.google.com/search">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="検索キーワード">
+                <input type="hidden" name="hl" value="ja" />
+                <input type="hidden" name="ie" value="utf-8">
+                <input type="hidden" name="oe" value="utf-8">
+                <input type="hidden" value="genomon-project.github.io" name="as_sitesearch" />
+                <input type="text" class="form-control" name="q" size="31" maxlength="256" value="" placeholder="検索キーワード" />
               </div>
-              <button type="submit" class="btn btn-default">検索</button>
+              <input type="submit" class="btn btn-default" name="btnG" value="検索" />
             </form>
-<!--
-            <li><a href="{root}/navbar/">Default</a></li>
-            <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
-            <li><a href="{root}/navbar-fixed-top/">Fixed top</a></li>
--->
           </ul>
 
         </div><!--/.nav-collapse -->
       </div>
-    </nav>`.replace("{root}", root);
+    </nav>`).split("{root}").join(root);
 };
 
 page.footer = function (id, root) {
 
-    //var parent = document.getElementById("parent");
-    //parent.setAttribute("height", document.body.scrollHeight + "px");
+    var footer = document.getElementById(id);
+    footer.innerHTML = `<footer style="display: block; font-size: 80%; line-height: 1.42857143; color: #777;">
+      <div class="container">
+        <hr>
+        <p>&copy; 2017 Team Gemonon.</p>
+      </div>
+    </footer>`.split("{root}").join(root);
 };
 
 })();

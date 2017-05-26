@@ -204,8 +204,7 @@ draw.index_summary = function (id) {
             }
         }
     }
-    // console.log(projects);
-    // console.log(disease);
+
     var data = [
         ["Groups", Object.keys(db.projects).length],
         ["Projects", projects.length],
@@ -214,16 +213,12 @@ draw.index_summary = function (id) {
     ];
     
     var table = document.getElementById(id);
-    table.setAttribute("class", "common");
+    table.setAttribute("class", "table table-striped");
     
     for (var i in data) {
         var row = table.insertRow();
-        var cell1 = row.insertCell();
-         cell1.setAttribute("class", "common");
-        cell1.appendChild(document.createTextNode(data[i][0]));
-        var cell2 = row.insertCell();
-        cell2.setAttribute("class", "common");
-        cell2.appendChild(document.createTextNode(data[i][1]));
+        row.insertCell().appendChild(document.createTextNode(data[i][0]));
+        row.insertCell().appendChild(document.createTextNode(data[i][1]));
     }
 };
 
@@ -237,16 +232,12 @@ draw.project_summary = function (id, group, disease) {
     ];
     
     var table = document.getElementById(id);
-    table.setAttribute("class", "common");
+    table.setAttribute("class", "table table-striped");
     
     for (var i in data) {
         var row = table.insertRow();
-        var cell1 = row.insertCell();
-         cell1.setAttribute("class", "common");
-        cell1.appendChild(document.createTextNode(data[i][0]));
-        var cell2 = row.insertCell();
-        cell2.setAttribute("class", "common");
-        cell2.appendChild(document.createTextNode(data[i][1]));
+        row.insertCell().appendChild(document.createTextNode(data[i][0]));
+        row.insertCell().appendChild(document.createTextNode(data[i][1]));
     }
 };
 

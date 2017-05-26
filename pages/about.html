@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GenomonPortal-about</title>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+  </head>
+  <body>
+    <div id="header"></div>
+    
+    <!-- container -->
+    <div class="container">
+      <!-- row1 -->
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Overview</h1>
+          <p>
+          次世代シーケンサーとスーパーコンピューティング技術の発展に伴い、ヒトゲノム解析による個別化医療が提唱されています。<br>
+          特にがんの個別化医療や予防を実現するためには、まずはデータの収集と蓄積が必要です。<br>
+          すなわち、がんシステムのデータベース化であり、GenomonPortalではゲノムデータやその解析結果を収集、共有することでがん研究に貢献することを目標としています。
+          </p>
+        </div>
+      </div>
+      <!-- /row1 -->
+
+      <!-- row2 -->
+      <div class="row">
+        <div class="col-md-12">
+          <h1>About GenomonPipeline</h1>
+            <p>
+            Genomon enables us to perform sensitive and accurate detection of most types of genomic variants
+            (single nucleotide variants, short indels, mid-size (20bp - 300bp) indels and large scale structural variations),
+            and transcriptomic changes (gene fusions, aberrant splicing patterns),
+            and fairly good performance is demonstrated through 
+            <a href="http://www.ncbi.nlm.nih.gov/pubmed?term=(Ogawa%2C%20Seishi%5BAuthor%5D)%20AND%20Miyano%2C%20Satoru%5BAuthor%5D">a large number of important cancer genome projects</a>.
+            </p>
+            <p>
+            Genomon adopts efficient job scheduling framework that enables us easily analyzing several hundreds of 
+            genome and transcriptome sequencing data simultaneously.
+            Genomon is easy to install and after installing, 
+            users can start analysis just preparing simple sample configuration files.
+            </p>
+            <p>
+            <a href="https://genomon-project.github.io/GenomonPagesR/"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> see detail, GenomonPipeline</a>
+            </p>
+        </div>
+      </div>
+      <!-- /row2 -->
+
+      <!-- row3 -->
+      <div class="row">
+        <div class="col-md-12">
+          <h1>About Us</h1>
+          <p>
+          このサイトはチームGenomonにより作成されています。
+          </p>
+          <p>
+          <a href="./contact.html"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Contact Us</a>
+          </p>
+        </div>
+      </div>
+      <!-- /row3 -->
+    </div> <!-- /container -->
+
+    <div id="footer"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../libs/jquery_v3.2.0/jquery-3.2.0.min.js"></script>
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/page.js"></script>
+    <script>
+      page.style();
+      page.header("header", "..", "about");
+      page.footer("footer", "..");
+    </script>
+  </body>
+</html>
