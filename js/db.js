@@ -368,6 +368,23 @@ db.get_lastupdate = function (group, disease) {
     return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
 };
 
+db.get_lastupdate_group = function (group) {
+    
+    var arr = [];
+    
+    for (var str in db.projects[group].data) {
+        for (var disease in db.projects[group].data[str]) {
+            arr.push(Date.parse(db.projects[group].data[str][disease].last_update));
+        }
+    }
+
+    arr.sort(function(a,b) {
+        return (a < b ? 1 : -1);
+    });
+    var date = new Date(arr[0]);
+
+    return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
+};
 
 })();
 Object.freeze(db);

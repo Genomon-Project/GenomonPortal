@@ -4,26 +4,57 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/graph.css"/>
-    <title>GenomonPortal-TCGA</title>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <title>GenomonPortal-tcga</title>
     
   </head>
   <body>
-    <div id="plot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div id="header"></div>
 
-    <h2 id="project">Projects</h2>
-    <table id="table"></table>
+    <!-- acsessor -->
+    <div id="accessor"></div>
 
-    <div id="plot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-    <!-- highcharts -->
-    <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
-    <script src="libs/Highcharts-5.0.9/modules/exporting.js"></script>
-    <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
-    <script src="style/default.js"></script>
-    <script src="js/draw.js"></script>
-    <script src="js/db.js"></script>
+    <!-- container -->
+    <div class="container">
+      <!-- row1 -->
+      <div class="row"><div class="col-md-12">
+        <h1 id="title">header</h1>
+        <p id="date">last update</p>
+
+        <div class="panel panel-default" style="margin:50px;">
+          <div class="panel-body">
+            <h3 class="panel-title">About TCGA</h3>
+          <hr>
+          <p>The Cancer Genome Atlas (TCGA) is a collaboration between the National Cancer Institute (NCI) and the National Human Genome Research Institute (NHGRI) that has generated comprehensive, multi-dimensional maps of the key genomic changes in 33 types of cancer.</p>
+          <p>The TCGA dataset, comprising more than two petabytes of genomic data, has been made publically available, and this genomic information helps the cancer research community to improve the prevention, diagnosis, and treatment of cancer.</p>
+          </div>
+        </div>
+
+        <div id="plot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        <h2 id="project">Projects</h2>
+        <table id="table"></table>
+      </div></div>
+      <!-- /row1 -->
+    </div> <!-- /container -->
+
+    <div id="footer"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../libs/jquery_v3.2.0/jquery-3.2.0.min.js"></script>
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/page.js"></script>
+
+    <script src="../libs/Highcharts-5.0.9/highcharts.js"></script>
+    <script src="../libs/Highcharts-5.0.9/modules/exporting.js"></script>
+    <script src="../libs/Highcharts-5.0.9/modules/treemap.js"></script>
+    <script src="../js/draw.js"></script>
+    <script src="../js/db.js"></script>
     <script type="text/javascript">
+      page.style();
+      page.header("header", "..", "analysis");
+      page.footer("footer", "..");
+
       draw.group_page('tcga');
     </script>
   </body>

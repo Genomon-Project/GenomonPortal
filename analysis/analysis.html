@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GenomonPortal-contact</title>
+    <title>GenomonPortal-analysis</title>
     <link rel="stylesheet" type="text/css" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
   </head>
@@ -14,41 +14,28 @@
     <!-- container -->
     <div class="container">
       <!-- row1 -->
-      <div class="row">
-        <div class="col-md-12">
-
-<p>Genomon Project is a collaborative effort between
-
-<ul>
- <li>Satoru Miyano Laboratory, Human Geome Center, The Institute of Medical Science, The University of Tokyo.</li>
- <li>Seishi Ogawa Laboratory, Department of Pathology and Tumor Biology, Graduate School of Medicine, Kyoto University.</li>
-</ul>
-and supported by grants from Miinistry of Education, Culture, Sports, Science and Technology,<br>
-Japan (22134004 and 15H05912).</p>
-
-<p>
-The most packages in this project are developed by 
-<a href="https://github.com/friend1ws"><span class="glyphicon glyphicon-github" aria-hidden="true"></span> Yuichi Shirashi</a>
-and 
-<a href="https://github.com/ken0-1n"><i class="fa fa-github" aria-hidden="true"></i> Kenichi Chiba</a>
-, with the help of Eigo Shimizu, Ai Okada, Mitsuhiro Komura, Hiroko Tanaka and the members of Satoru Miyano and Seishi Ogawa laboratories.
-</p>
-<p>
-We greatly welcome feedback on Genomon to genomon.devel@gmail.com.
-</p>
-<p>
-Also, you can make an appointment with us, here.
-</p>
-<p>
-<a href="https://genomon-office.youcanbook.me">Genomon Office Hour</a>
-</p>
-<p>
-The character of Genomon is desined by Yuki Tsujita.
-</p>
-          </p>
-        </div>
-      </div>
+      <div class="row"><div class="col-md-12">
+        <h1>ogawalab</h1>
+        <div id="ogawalab"></div>
+        <center><a href="./ogawalab.html" class="btn btn-primary" role="button" target=_blank>View this group</a></center>
+      </div></div>
       <!-- /row1 -->
+
+      <!-- row2 -->
+      <div class="row"><div class="col-md-12">
+        <h1>icgc_riken</h1>
+        <div id="icgc_riken"></div>
+        <center><a href="./icgc_riken.html" class="btn btn-primary" role="button" target=_blank>View this group</a></center>
+      </div></div>
+      <!-- /row2 -->
+
+      <!-- row3 -->
+      <div class="row"><div class="col-md-12">
+        <h1>tcga</h1>
+        <div id="tcga"></div>
+        <center><a href="./tcga.html" class="btn btn-primary" role="button" target=_blank>View this group</a></center>
+      </div></div>
+      <!-- /row3 -->
     </div> <!-- /container -->
 
     <div id="footer"></div>
@@ -67,6 +54,10 @@ The character of Genomon is desined by Yuki Tsujita.
       page.style();
       page.header("header", "..", "analysis");
       page.footer("footer", "..");
+
+      draw.group_bar('ogawalab', 'ogawalab');
+      draw.group_bar('icgc_riken', 'icgc_riken');
+      draw.group_bar('tcga', 'tcga');
     </script>
   </body>
 </html>

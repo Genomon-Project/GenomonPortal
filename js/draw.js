@@ -82,6 +82,11 @@ draw.project_pie = function (id, group, disease) {
             ]
         }]
     });
+    
+    var plot = document.getElementById(id);
+    plot.style["min-width"] = "100px";
+    plot.style["height"] = "300px";
+    plot.style["margin"] = "0 auto";
 };
 draw.index_bar = function (id) {
     var data = db.get_topdata_bar();
@@ -247,7 +252,7 @@ draw.project_table = function (id, group, disease) {
     for (var str in db.strategy) {
         var str_title = '<i class="fa fa-square pre_text" aria-hidden="true" style="color:'
             + db.strategy[str].color
-            + ';"></i>' 
+            + ';"></i> ' 
             + db.strategy[str].label;
         
         if (((str in db.projects[group].data) == false) || ((disease in db.projects[group].data[str]) == false)) {
@@ -259,41 +264,40 @@ draw.project_table = function (id, group, disease) {
         add[1] = db.projects[group].data[str][disease].cases;
         add[2] = db.projects[group].data[str][disease].files;
         
-        add[3] = '<a href="' + '#' + '" class="fa fa-external-link btn" aria-hidden="true"></a>'
-            + '<a href="' + '#' + '" class="fa fa-download btn" aria-hidden="true"></a>';
+        add[3] = '<a href="' + '#' + '" class="btn btn-primary btn-sm" role="button" target=_blank><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a> '
+            + '<a href="' + '#' + '" class="btn btn-primary btn-sm" role="button" target=_blank><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>';
         add[4] = db.projects[group].data[str][disease].last_update;
         data.push(add);
     }
     
     var table = document.getElementById(id);
-    table.setAttribute("class", "common");
+    table.setAttribute("class", "table table-striped");
     
     // tbody
     for (var i in data) {
         var row = table.insertRow();
-        row.insertCell().outerHTML = '<td class="common" style="text-align: left">' + data[i][0] + '</td>';
-        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + data[i][1] + '</td>';
-        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + data[i][2] + '</td>';
-        row.insertCell().outerHTML = '<td class="common" style="text-align: center">' + data[i][3] + '</td>';
-        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + data[i][4] + '</td>';
+        row.insertCell().outerHTML = '<td style="vertical-align: middle; text-align: left">' + data[i][0] + '</td>';
+        row.insertCell().outerHTML = '<td style="vertical-align: middle; text-align: right">' + data[i][1] + '</td>';
+        row.insertCell().outerHTML = '<td style="vertical-align: middle; text-align: right">' + data[i][2] + '</td>';
+        row.insertCell().outerHTML = '<td style="vertical-align: middle; text-align: center">' + data[i][3] + '</td>';
+        row.insertCell().outerHTML = '<td style="vertical-align: middle; text-align: right">' + data[i][4] + '</td>';
     }
     
     // theader
     var header = table.createTHead();
-    header.setAttribute("class", "common");
     var hrow = header.insertRow();
-    hrow.insertCell().outerHTML = '<th class="common" style="text-align: left">Experimental Strategy</th>';
-    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right"># Cases</th>';
-    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right"># Files</th>';
-    hrow.insertCell().outerHTML = '<th class="common" style="text-align: center">Analyzed data</th>';
-    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right">Last Updated (yyyy/mm/dd)</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: left">Experimental Strategy</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: right"># Cases</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: right"># Files</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: center">Analyzed data</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: right">Last Updated (yyyy/mm/dd)</th>';
 };
 
 
 draw.group_table = function (id, group, data) {
 
     var table = document.getElementById(id);
-    table.setAttribute("class", "common");
+    table.setAttribute("class", "table table-striped");
     var li = ["exome", "wgs", "target", "rna", "rna_single"];
     
     // tbody
@@ -304,28 +308,28 @@ draw.group_table = function (id, group, data) {
         }
         row_count += 1;
         var row = table.insertRow();
-        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + row_count + '</td>';
-        row.insertCell().outerHTML = '<td class="common" style="text-align: left"><a href="'
-            + '../analysis/' + group + '/' + data.key[j] + '" target=' + group + '_' + data.key[j] + '>'
+        row.insertCell().outerHTML = '<td style="text-align: right">' + row_count + '</td>';
+        row.insertCell().outerHTML = '<td style="text-align: left"><a href="'
+            + '../analysis/' + group + '_' + data.key[j] + '.html" target=' + group + '_' + data.key[j] + '>'
             + data.disease[j] + '</a></td>';
         for (var i in li) {
-            row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + data[li[i]][j] + '</td>';
+            row.insertCell().outerHTML = '<td style="text-align: right">' + data[li[i]][j] + '</td>';
         }
-        row.insertCell().outerHTML = '<td class="common" style="text-align: right">' + db.get_lastupdate (group, data.key[j]) + '</td>';
+        row.insertCell().outerHTML = '<td style="text-align: right">' + db.get_lastupdate (group, data.key[j]) + '</td>';
     }
     
     // theader
     var header = table.createTHead();
     header.setAttribute("class", "common");
     var hrow = header.insertRow();
-    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right">#</th>';
-    hrow.insertCell().outerHTML = '<th class="common" style="text-align: left">Cancer Types</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: right">#</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: left">Cancer Types</th>';
 
 
     for (var i in li) {
-        hrow.insertCell().outerHTML = '<th class="common" style="text-align: right"># Cases (' + db.strategy[li[i]].label + ')</th>';
+        hrow.insertCell().outerHTML = '<th style="text-align: right"># Cases (' + db.strategy[li[i]].label + ')</th>';
     }
-    hrow.insertCell().outerHTML = '<th class="common" style="text-align: right">Last Updated (yyyy/mm/dd)</th>';
+    hrow.insertCell().outerHTML = '<th style="text-align: right">Last Updated (yyyy/mm/dd)</th>';
     
     return row_count;
 };
@@ -362,30 +366,43 @@ draw.project_report = function (id, group, disease) {
 };
 
 draw.project_page = function (group, disease) {
-    var title = document.getElementById('title');
-    title.innerHTML = '<i class="fa fa-align-left" aria-hidden="true" style="margin-right: 10px;"></i>' 
+
+    document.getElementsByTagName("title")[0].innerHTML = "GenomonPortal - " + db.disease[disease].label + "@" + db.projects[group].label;
+    document.getElementById('title').innerHTML = '<i class="fa fa-align-left" aria-hidden="true" style="margin-right: 10px;"></i>' 
         + db.disease[disease].label;
-    var date = document.getElementById('date');
-    date.innerHTML = '<i class="fa fa-clock-o pre_text" aria-hidden="true"></i> Last Update '
+    document.getElementById('date').innerHTML = '<i class="fa fa-clock-o pre_text" aria-hidden="true"></i> Last Update '
         + db.get_lastupdate (group, disease);
+    
+    var accessor = document.getElementById('accessor');
+    accessor.innerHTML = '<a href="../index.html">Home</a> '
+        + '> <a href="' + group + '.html">' + db.projects[group].label + '</a> '
+        + '> ' + db.disease[disease].label;
+    accessor.style["margin-left"] = "10px";
+    
     draw.project_summary ('summary', group, disease);
     draw.project_pie ('pie', group, disease);
     draw.project_table ('table', group, disease);
     draw.project_report ('report', group, disease);
 };
 
-draw.group_page = function (group, disease) {
+draw.group_page = function (group) {
 
+    document.getElementsByTagName("title")[0].innerHTML = "GenomonPortal - " + db.projects[group].label;
+    document.getElementById('title').innerHTML = '<i class="fa fa-flask" aria-hidden="true" style="margin-right: 10px;"></i>' 
+        + db.projects[group].label;
+    
+    document.getElementById('date').innerHTML = '<i class="fa fa-clock-o pre_text" aria-hidden="true"></i> Last Update '
+        + db.get_lastupdate_group (group);
+    
+    var accessor = document.getElementById('accessor');
+    accessor.innerHTML = '<a href="../index.html">Home</a> '
+        + '> ' + db.projects[group].label;
+    accessor.style["margin-left"] = "10px";
+    
     var data = draw.group_bar('plot', group);
     var num = draw.group_table ('table', group, data);
     var title = document.getElementById('project');
     title.innerHTML = 'Projects (' + num + ')';
-};
-
-draw.parent_frame = function () {
-
-    //var parent = document.getElementById("parent");
-    //parent.setAttribute("height", document.body.scrollHeight + "px");
 };
 
 })();

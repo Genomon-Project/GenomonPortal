@@ -4,39 +4,68 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/graph.css"/>
-    <title>GenomonPortal-ogawalab-RCC</title>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <title></title>
     
   </head>
   <body>
-    <h1 id="title">header</h1>
-    <p id="date">last update</p>
-    
-    <div class="frame">
-      <div class="box" style="width:50%">
-        <h2>Summary</h2>
-        <table id="summary"></table>
+    <div id="header"></div>
+
+    <!-- acsessor -->
+    <div id="accessor"></div>
+
+    <!-- container -->
+    <div class="container">
+      <!-- row1 -->
+      <div class="row"><div class="col-md-12">
+        <h1 id="title">header</h1>
+        <p id="date">last update</p>
+      </div></div>
+      <!-- /row1 -->
+
+      <!-- row2 -->
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Summary</h2>
+          <table id="summary"></table>
+        </div>
+        <div class="col-md-6">
+          <div id="pie"></div>
+        </div>
       </div>
-      <div class="box">
-        <div id="pie" class="pie"></div>
+      <!-- /row2 -->
+
+      <!-- row3 -->
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Sequence Data</h2>
+          <table id ="table"></table>
+          <br>
+          <h2>Reports</h2>
+          <ul id ="report"></ul>
+        </div>
       </div>
-    </div>
+      <!-- /row3 -->
+    </div> <!-- /container -->
 
-    <h2>Sequence Data</h2>
-    <table id ="table"></table>
+    <div id="footer"></div>
 
-    <h2>Reports</h2>
-    <ul id ="report"></ul>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../libs/jquery_v3.2.0/jquery-3.2.0.min.js"></script>
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/page.js"></script>
 
-    <!-- highcharts -->
-    <script src="libs/Highcharts-5.0.9/highcharts.js"></script>
-    <script src="libs/Highcharts-5.0.9/modules/exporting.js"></script>
-    <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
-    <script src="style/default.js"></script>
-    <script src="js/draw.js"></script>
-    <script src="js/db.js"></script>
+    <script src="../libs/Highcharts-5.0.9/highcharts.js"></script>
+    <script src="../libs/Highcharts-5.0.9/modules/exporting.js"></script>
+    <script src="../libs/Highcharts-5.0.9/modules/treemap.js"></script>
+    <script src="../js/draw.js"></script>
+    <script src="../js/db.js"></script>
     <script type="text/javascript">
+      page.style();
+      page.header("header", "..", "analysis");
+      page.footer("footer", "..");
+
       draw.project_page ('ogawalab', 'rcc');
     </script>
   </body>
