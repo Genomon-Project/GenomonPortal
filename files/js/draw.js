@@ -310,7 +310,7 @@ draw.group_table = function (id, group, data) {
         var row = table.insertRow();
         row.insertCell().outerHTML = '<td style="text-align: right">' + row_count + '</td>';
         row.insertCell().outerHTML = '<td style="text-align: left"><a href="'
-            + '../analysis/' + group + '_' + data.key[j] + '.html" target=' + group + '_' + data.key[j] + '>'
+            + group + '_' + data.key[j] + '.html" target=' + group + '_' + data.key[j] + '>'
             + data.disease[j] + '</a></td>';
         for (var i in li) {
             row.insertCell().outerHTML = '<td style="text-align: right">' + data[li[i]][j] + '</td>';
@@ -375,6 +375,7 @@ draw.project_page = function (group, disease) {
     
     var accessor = document.getElementById('accessor');
     accessor.innerHTML = '<a href="../index.html">Home</a> '
+        + '> <a href="_analysis.html">Analysis</a> '
         + '> <a href="' + group + '.html">' + db.projects[group].label + '</a> '
         + '> ' + db.disease[disease].label;
     accessor.style["margin-left"] = "10px";
@@ -396,6 +397,7 @@ draw.group_page = function (group) {
     
     var accessor = document.getElementById('accessor');
     accessor.innerHTML = '<a href="../index.html">Home</a> '
+        + '> <a href="_analysis.html">Analysis</a> '
         + '> ' + db.projects[group].label;
     accessor.style["margin-left"] = "10px";
     

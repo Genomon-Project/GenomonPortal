@@ -23,7 +23,7 @@ page.header = function (id, root, active) {
       active_class[2] = 'class="active"';
     }
     
-    header.innerHTML = (`    <img src="{root}/images/header-hgc.png" / style="width:400px; padding:30px" >
+    header.innerHTML = (`    <img src="{root}/files/images/header-hgc.png" / style="width:400px; padding:30px" >
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -38,9 +38,9 @@ page.header = function (id, root, active) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ` + active_class[0] + `><a href="{root}/analysis/analysis.html">Analysis</a></li>
-            <li ` + active_class[1] + `><a href="{root}/pages/about.html">About the GP</a></li>
-            <li ` + active_class[2] + `><a href="{root}/pages/contact.html">Contact Us</a></li>
+            <li ` + active_class[0] + `><a href="{root}/files/_analysis.html">Analysis</a></li>
+            <li ` + active_class[1] + `><a href="{root}/files/_about.html">About the GP</a></li>
+            <li ` + active_class[2] + `><a href="{root}/files/_contact.html">Contact Us</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
