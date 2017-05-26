@@ -373,12 +373,10 @@ draw.project_page = function (group, disease) {
     document.getElementById('date').innerHTML = '<i class="fa fa-clock-o pre_text" aria-hidden="true"></i> Last Update '
         + db.get_lastupdate (group, disease);
     
-    var accessor = document.getElementById('accessor');
-    accessor.innerHTML = '<a href="../index.html">Home</a> '
-        + '> <a href="_analysis.html">Analysis</a> '
+    var html = '<a href="_analysis.html">Analysis</a> '
         + '> <a href="' + group + '.html">' + db.projects[group].label + '</a> '
         + '> ' + db.disease[disease].label;
-    accessor.style["margin-left"] = "10px";
+    page.accessor("accessor", html);
     
     draw.project_summary ('summary', group, disease);
     draw.project_pie ('pie', group, disease);
@@ -395,11 +393,9 @@ draw.group_page = function (group) {
     document.getElementById('date').innerHTML = '<i class="fa fa-clock-o pre_text" aria-hidden="true"></i> Last Update '
         + db.get_lastupdate_group (group);
     
-    var accessor = document.getElementById('accessor');
-    accessor.innerHTML = '<a href="../index.html">Home</a> '
-        + '> <a href="_analysis.html">Analysis</a> '
+    var html = '<a href="_analysis.html">Analysis</a> '
         + '> ' + db.projects[group].label;
-    accessor.style["margin-left"] = "10px";
+    page.accessor("accessor", html);
     
     var data = draw.group_bar('plot', group);
     var num = draw.group_table ('table', group, data);

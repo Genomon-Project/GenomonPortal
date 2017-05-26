@@ -72,4 +72,13 @@ page.footer = function (id, root) {
     </footer>`.split("{root}").join(root);
 };
 
+page.accessor = function (id, html) {
+
+    var home = '<a href="../index.html">Home</a> > ';
+    
+    var accessor = document.getElementById(id);
+    accessor.innerHTML = home + html;
+    accessor.style["margin-left"] = "10px";
+};
+
 })();
