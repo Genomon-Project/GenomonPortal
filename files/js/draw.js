@@ -46,6 +46,11 @@ draw.group_bar = function (id, group) {
 };
 
 draw.project_pie = function (id, group, disease) {
+    var plot = document.getElementById(id);
+    plot.style["min-width"] = "100px";
+    plot.style["height"] = "300px";
+    plot.style["margin"] = "0 auto"; 
+ 
     var data = db.get_projectdata_pie(group, disease);
     Highcharts.chart(id, {
         chart: {
@@ -83,10 +88,7 @@ draw.project_pie = function (id, group, disease) {
         }]
     });
     
-    var plot = document.getElementById(id);
-    plot.style["min-width"] = "100px";
-    plot.style["height"] = "300px";
-    plot.style["margin"] = "0 auto";
+
 };
 draw.index_bar = function (id) {
     var data = db.get_topdata_bar();
@@ -250,7 +252,7 @@ draw.project_table = function (id, group, disease) {
     
     var data = [];
     for (var str in db.strategy) {
-        var str_title = '<i class="fa fa-square pre_text" aria-hidden="true" style="color:'
+        var str_title = '<i class="fa fa-square" aria-hidden="true" style="color:'
             + db.strategy[str].color
             + ';"></i> ' 
             + db.strategy[str].label;
@@ -340,15 +342,13 @@ draw.project_report = function (id, group, disease) {
 
     if (((disease in db.projects[group].report) == false)
       || (db.projects[group].report[disease] < 1)) {
-        ul.setAttribute("class", "report_title");
-        ul.innerHTML = "no data";
+        ul.innerHTML = '<font color="#666">no data</font>';
         return;
     }
     
     for (var i in db.projects[group].report[disease]) {
 
        var li = document.createElement("li");
-       li.setAttribute("class", "report_title");
        
        if (("link" in db.projects[group].report[disease][i]) 
         && (db.projects[group].report[disease][i].link.length > 0)) {
@@ -370,7 +370,7 @@ draw.project_page = function (group, disease) {
     document.getElementsByTagName("title")[0].innerHTML = "GenomonPortal - " + db.disease[disease].label + "@" + db.projects[group].label;
     document.getElementById('title').innerHTML = '<i class="fa fa-align-left" aria-hidden="true" style="margin-right: 10px;"></i>' 
         + db.disease[disease].label;
-    document.getElementById('date').innerHTML = '<i class="fa fa-clock-o pre_text" aria-hidden="true"></i> Last Update '
+    document.getElementById('date').innerHTML = '<i class="fa fa-clock-o" aria-hidden="true"></i> Last Update '
         + db.get_lastupdate (group, disease);
     
     var html = '<a href="_analysis.html">Analysis</a> '
@@ -390,7 +390,7 @@ draw.group_page = function (group) {
     document.getElementById('title').innerHTML = '<i class="fa fa-flask" aria-hidden="true" style="margin-right: 10px;"></i>' 
         + db.projects[group].label;
     
-    document.getElementById('date').innerHTML = '<i class="fa fa-clock-o pre_text" aria-hidden="true"></i> Last Update '
+    document.getElementById('date').innerHTML = '<i class="fa fa-clock-o" aria-hidden="true"></i> Last Update '
         + db.get_lastupdate_group (group);
     
     var html = '<a href="_analysis.html">Analysis</a> '

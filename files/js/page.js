@@ -22,8 +22,8 @@ page.header = function (id, root, active) {
     else if (active == "contact") {
       active_class[2] = 'class="active"';
     }
-    
-    header.innerHTML = (`    <img src="{root}/files/images/header-hgc.png" / style="width:400px; padding:30px" >
+
+    header.innerHTML = (`
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -34,13 +34,13 @@ page.header = function (id, root, active) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{root}/index.html">Genomon Portal</a>
+          <a class="navbar-brand" href="{root}/index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <b>Genomon</b> Portal</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ` + active_class[0] + `><a href="{root}/files/_analysis.html">Analysis</a></li>
-            <li ` + active_class[1] + `><a href="{root}/files/_about.html">About the GP</a></li>
-            <li ` + active_class[2] + `><a href="{root}/files/_contact.html">Contact Us</a></li>
+            <li ` + active_class[0] + `><a href="{root}/files/_analysis.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Analysis</a></li>
+            <li ` + active_class[1] + `><a href="{root}/files/_about.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> About the GP</a></li>
+            <li ` + active_class[2] + `><a href="{root}/files/_contact.html"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> Contact Us</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -67,7 +67,19 @@ page.footer = function (id, root) {
     footer.innerHTML = `<footer style="display: block; font-size: 80%; line-height: 1.42857143; color: #777;">
       <div class="container">
         <hr>
-        <p>&copy; 2017 Team Gemonon.</p>
+        <div class="row">
+          <div class="col-md-10">
+            <p>The super-computing resource was provided by Human Genome Center, the Institute of Medical Science,The University of Tokyo (http://sc.hgc.jp/shirokane.html).</p>
+            <p>&copy; 2017 Gemonon Project. All Rights reserved.</p>
+            <p style="padding-left:16px;">
+              <i class="fa fa-github" aria-hidden="true" style="margin-right: 5px;"></i><a href="https://github.com/Genomon-Project">https://github.com/Genomon-Project</a></br>
+              <i class="fa fa-envelope" aria-hidden="true" style="margin-right: 5px;"></i><a href="mailto:genomon.devel@gmail.com">genomon.devel@gmail.com</a>
+            </p>
+          </div>
+          <div class="col-md-2">
+            <a href="http://www.hgc.jp"><img src="http://www.hgc.jp/english/img/logo/HGC_logo_S.png" border="0" align="right" alt="This website is provided by Human Genome Center, The Institute of Medical Science, The University of Tokyo" /></a>
+          </div>
+        </div>
       </div>
     </footer>`.split("{root}").join(root);
 };
@@ -78,7 +90,6 @@ page.accessor = function (id, html) {
     
     var accessor = document.getElementById(id);
     accessor.innerHTML = home + html;
-    accessor.style["margin-left"] = "10px";
 };
 
 })();
