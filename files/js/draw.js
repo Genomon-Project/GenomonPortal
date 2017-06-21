@@ -266,8 +266,8 @@ draw.project_table = function (id, group, disease) {
         add[1] = db.projects[group].data[str][disease].cases;
         add[2] = db.projects[group].data[str][disease].files;
         
-        add[3] = '<a href="' + '#' + '" class="btn btn-primary btn-sm" role="button" target=_blank><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a> '
-            + '<a href="' + '#' + '" class="btn btn-primary btn-sm" role="button" target=_blank><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>';
+        add[3] = '<a href="' + db.projects[group].data[str][disease].index + '" class="btn btn-primary btn-sm" role="button" target=_blank><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a> '
+            + '<a href="' + db.projects[group].data[str][disease].zip + '" class="btn btn-primary btn-sm" role="button" target=_blank><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>';
         add[4] = db.projects[group].data[str][disease].last_update;
         data.push(add);
     }
