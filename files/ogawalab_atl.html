@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <title>GenomonPortal-icgc-riken</title>
+    <title></title>
     
   </head>
   <body>
@@ -21,24 +21,32 @@
       <div class="row"><div class="col-md-12">
         <h1 id="title">header</h1>
         <p id="date">last update</p>
-
-        <div class="panel panel-default" style="margin:50px;">
-          <div class="panel-body">
-            <h3 class="panel-title">About ICGC</h3>
-            <hr>
-            <p>国際がんゲノムコンソーシアム（International Cancer Genome Consortium：ICGC)</p>
-            <p>Japan</p>
-            <ul>
-            <li>RIKEN</li>
-            </ul>
-          </div>
-        </div>
-
-        <div id="plot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-        <h2 id="project">Projects</h2>
-        <table id="table"></table>
       </div></div>
       <!-- /row1 -->
+
+      <!-- row2 -->
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Summary</h2>
+          <table id="summary"></table>
+        </div>
+        <div class="col-md-6">
+          <div id="pie"></div>
+        </div>
+      </div>
+      <!-- /row2 -->
+
+      <!-- row3 -->
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Sequence Data</h2>
+          <table id ="table"></table>
+          <br>
+          <h2>Reports</h2>
+          <ul id ="report"></ul>
+        </div>
+      </div>
+      <!-- /row3 -->
     </div> <!-- /container -->
 
     <div id="footer"></div>
@@ -58,7 +66,7 @@
       page.header("header", "..", "analysis");
       page.footer("footer", "..");
 
-      draw.group_page('icgc_riken');
+      draw.project_page ('ogawalab', 'atl');
     </script>
   </body>
 </html>

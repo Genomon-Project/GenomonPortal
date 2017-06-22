@@ -1,54 +1,15 @@
 (function(){
 db = {};
+
 db.disease = {
-    RCC: { label: "RCC", type: "Renal Cell Carcinoma", site: "Kidney" },
-    HCC: { label: "HCC", type: "HepatoCellular Carcinoma", site: "Liver" },
-    ATL: { label: "ATL", type: "Adult T-cell Leukemia", site: "Lymph Nodes" },
-    TAM_AMKL: { label: "TAM_AMKL", type: "*****", site: "Unknown" },
-
-    // ACC: { label: "ACC", type: "Adrenocortical carcinoma", site: "Adrenal Gland" },
-    // AML: { label: "AML", type: "*****", site: "Unknown" },
-    // BLCA: { label: "BLCA", type: "Bladder Urothelial Carcinoma", site: "Bladder" },
-    // BRCA: { label: "BRCA", type: "Breast invasive carcinoma", site: "Breast" },
-    // CESC: { label: "CESC", type: "Cervical squamous cell carcinoma and endocervical adenocarcinoma", site: "Cervix" },
-    // CHOL: { label: "CHOL", type: "Cholangiocarcinoma", site: "Bile Duct" },
-    // COAD: { label: "COAD", type: "Colon adenocarcinoma", site: "Colorectal" },
-    // DLBC: { label: "DLBC", type: "Lymphoid Neoplasm Diffuse Large B-cell Lymphoma", site: "Lymph Nodes" },
-    // DS_AMKL: { label: "DS_AMKL", type: "*****", site: "Unknown" },
-    // ESCA: { label: "ESCA", type: "Esophageal carcinoma", site: "Esophagus" },
-    // GBM: { label: "GBM", type: "Glioblastoma multiforme", site: "Brain" },
-    // HNSC: { label: "HNSC", type: "Head and Neck squamous cell carcinoma", site: "Head and Neck" },
-    // KICH: { label: "KICH", type: "Kidney Chromophobe", site: "Kidney" },
-    // KIRC: { label: "KIRC", type: "Kidney renal clear cell carcinoma", site: "Kidney" },
-    // KIRP: { label: "KIRP", type: "Kidney renal papillary cell carcinoma", site: "Kidney" },
-    // LAML: { label: "LAML", type: "Acute Myeloid Leukemia", site: "Bone Marrow" },
-    // LGG: { label: "LGG", type: "Brain Lower Grade Glioma", site: "Brain" },
-    // LIHC: { label: "LIHC", type: "Liver hepatocellular carcinoma", site: "Liver" },
-    // LUAD: { label: "LUAD", type: "Lung adenocarcinoma", site: "Lung" },
-    // LUSC: { label: "LUSC", type: "Lung squamous cell carcinoma", site: "Lung" },
-    // MDS: { label: "MDS", type: "*****", site: "Unknown" },
-    // MESO: { label: "MESO", type: "Mesothelioma", site: "Pleura" },
-    // OV: { Label: "OV", type: "Ovarian serous cystadenocarcinoma", site: "Ovary" },
-    // PAAD: { label: "PAAD", type: "Pancreatic adenocarcinoma", site: "Pancreas" },
-    // PCPG: { label: "PCPG", type: "Pheochromocytoma and Paraganglioma", site: "Adrenal Gland" },
-    // PRAD: { label: "PRAD", type: "Prostate adenocarcinoma", site: "Prostate" },
-    // READ: { label: "READ", type: "Rectum adenocarcinoma", site: "Colorectal" },
-    // SARC: { label: "SARC", type: "Sarcoma", site: "Soft Tissue" },
-    // SKCM: { label: "SKCM", type: "Skin Cutaneous Melanoma", site: "Skin" },
-    // STAD: { label: "STAD", type: "Stomach adenocarcinoma", site: "Stomach" },
-    // TGCT: { label: "TGCT", type: "Testicular Germ Cell Tumors", site: "Testis" },
-    // THCA: { label: "THCA", type: "Thyroid carcinoma", site: "Thyroid" },
-    // THYM: { label: "THYM", type: "Thymoma", site: "Thymus" },
-    // UCEC: { label: "UCEC", type: "Uterine Corpus Endometrial Carcinoma", site: "Uterus" },
-    // UCS:  { label: "UCS", type: "Uterine Carcinosarcoma", site: "Uterus" },
-    // UVM:  { label: "UVM", type: "Uveal Melanoma", site: "Eye" },
+atl: {"type": "Adult T-cell Leukemia", "site": "Lymph Nodes", "label": "ATL"},
+cushing: {"type": "***", "site": "Unknown", "label": "Cushing"},
+hcc: {"type": "HepatoCellular Carcinoma", "site": "Liver", "label": "HCC"},
+rcc: {"type": "Renal Cell Carcinoma", "site": "Kidney", "label": "RCC"},
+tam_amkl: {"type": "*****", "site": "Unknown", "label": "TAM_AMKL"},
 };
-
-db.projects = {"ogawalab": {"report": {"ATL": [{"link": "", "title": "Integrated molecular analysis of adult T cell leukemia/lymphoma., Kataoka K et al., Nat Genet. Online, 2015."}], "RCC": []}, "data": {"exome": {"ATL": {"files": 162, "index": "./analysis/ogawalab/exome/ATL/hg19/2.5.0/paplot/exome_ATL/index.html", "cases": 81, "zip": "/home/eva/workscape/aiokada/analysis/ogawalab/exome/ATL/hg19/2.5.0/paplot/ogawalab_exome_ATL_hg19_2.5.0.zip", "last_update": "2017-04-04"}, "TAM_AMKL": {"files": 54, "index": "./analysis/ogawalab/exome/TAM_AMKL/hg19/2.5.2/paplot/sample/index.html", "cases": 29, "zip": "/home/eva/workscape/aiokada/analysis/ogawalab/exome/TAM_AMKL/hg19/2.5.2/paplot/ogawalab_exome_TAM_AMKL_hg19_2.5.2.zip", "last_update": "2017-05-29"}, "RCC": {"files": 212, "index": "./analysis/ogawalab/exome/RCC/hg19/2.5.0/paplot/exome_RCC/index.html", "cases": 106, "zip": "/home/eva/workscape/aiokada/analysis/ogawalab/exome/RCC/hg19/2.5.0/paplot/ogawalab_exome_RCC_hg19_2.5.0.zip", "last_update": "2017-03-11"}}, "rna": {"ATL": {"files": 99, "index": "./analysis/ogawalab/rna/ATL/hg19/2.5.0/paplot/rna_ATL/index.html", "cases": 99, "zip": "/home/eva/workscape/aiokada/analysis/ogawalab/rna/ATL/hg19/2.5.0/paplot/ogawalab_rna_ATL_hg19_2.5.0.zip", "last_update": "2017-03-24"}}, "wgs": {"ATL_Hiseq": {"files": 22, "index": "./analysis/ogawalab/wgs/ATL_Hiseq/hg19/2.5.0/paplot/wgs_ATL_Hiseq/index.html", "zip": "/home/eva/workscape/aiokada/analysis/ogawalab/wgs/ATL_Hiseq/hg19/2.5.0/paplot/ogawalab_wgs_ATL_Hiseq_hg19_2.5.0.zip", "last_update": "2017-03-26", "parent_id": "ATL", "cases": 11, "label": "ATL_hiseq"}, "ATL_Xten_lowpass": {"files": 76, "index": "./analysis/ogawalab/wgs/ATL_Xten_lowpass/hg19/2.5.0/paplot/wgs_ATL_Xten_lowpass/index.html", "zip": "/home/eva/workscape/aiokada/analysis/ogawalab/wgs/ATL_Xten_lowpass/hg19/2.5.0/paplot/ogawalab_wgs_ATL_Xten_lowpass_hg19_2.5.0.zip", "last_update": "2017-03-28", "parent_id": "ATL", "cases": 38, "label": "ATL_XTEN_lowpass"}, 
-
-"ATL_Xten_merge": {"files": 52, "index": "./analysis/ogawalab/wgs/ATL_Xten_merge/hg19/2.5.0/paplot/wgs_ATL_Xten_merge/index.html", "zip": "/home/eva/workscape/aiokada/analysis/ogawalab/wgs/ATL_Xten_merge/hg19/2.5.0/paplot/ogawalab_wgs_ATL_Xten_merge_hg19_2.5.0.zip", "last_update": "2017-03-30", "cases": 26, "label": "ATL_XTEN_merge", parent_id: "ATL"}, 
-
-"RCC": {"files": 28, "index": "./analysis/ogawalab/wgs/RCC/hg19/2.5.0/paplot/wgs_RCC/index.html", "cases": 14, "zip": "/home/eva/workscape/aiokada/analysis/ogawalab/wgs/RCC/hg19/2.5.0/paplot/ogawalab_wgs_RCC_hg19_2.5.0.zip", "last_update": "2017-03-22"}}}, "label": "ogawalab"}, "icgc_riken": {"report": {"HCC": []}, "data": {"rna": {}, "wgs": {"HCC": {"files": 300, "cases": 300, "last_update": "2017/4/30"}}}, "label": "icgc_riken"}};
+db.projects =
+{"ogawalab": {"report": {"atl": [{"link": "", "title": "Integrated molecular analysis of adult T cell leukemia/lymphoma., Kataoka K et al., Nat Genet. Online, 2015."}], "rcc": []}, "data": {"exome": {"atl": {"files": 162, "index": "/../analysis/ogawalab/exome/ATL/hg19/2.5.0/paplot/exome_ATL/index.html", "zip": "//usr/proj/genomon_portal/htdocs/tmp/analysis/ogawalab/exome/ATL/hg19/2.5.0/paplot/ogawalab_exome_ATL_hg19_2.5.0.zip", "last_update": "2017/04/04", "path": "ogawalab/exome/ATL", "cases": 81}, "cushing": {"files": 16, "index": "/../analysis/ogawalab/exome/Cushing/hg19/2.5.2/paplot/sample/index.html", "zip": "//usr/proj/genomon_portal/htdocs/tmp/analysis/ogawalab/exome/Cushing/hg19/alignment/paplot/ogawalab_exome_Cushing_hg19_alignment.zip", "last_update": "2017/06/22", "path": "ogawalab/exome/Cushing", "cases": 8}, "tam_amkl": {"files": 54, "index": "/../analysis/ogawalab/exome/TAM_AMKL/hg19/2.5.2/paplot/sample/index.html", "zip": "//usr/proj/genomon_portal/htdocs/tmp/analysis/ogawalab/exome/TAM_AMKL/hg19/2.5.2/paplot/ogawalab_exome_TAM_AMKL_hg19_2.5.2.zip", "last_update": "2017/05/29", "path": "ogawalab/exome/TAM_AMKL", "cases": 29}, "rcc": {"files": 212, "index": "/../analysis/ogawalab/exome/RCC/hg19/2.5.0/paplot/exome_RCC/index.html", "zip": "//usr/proj/genomon_portal/htdocs/tmp/analysis/ogawalab/exome/RCC/hg19/2.5.0/paplot/ogawalab_exome_RCC_hg19_2.5.0.zip", "last_update": "2017/03/11", "path": "ogawalab/exome/RCC", "cases": 106}}, "rna": {"atl": {"files": 99, "index": "/../analysis/ogawalab/rna/ATL/hg19/2.5.0/paplot/rna_ATL/index.html", "zip": "//usr/proj/genomon_portal/htdocs/tmp/analysis/ogawalab/rna/ATL/hg19/2.5.0/paplot/ogawalab_rna_ATL_hg19_2.5.0.zip", "last_update": "2017/03/24", "path": "ogawalab/rna/ATL", "cases": 99}}, "wgs": {"atl": {"files": 52, "index": "/../analysis/ogawalab/wgs/ATL_Xten_merge/hg19/2.5.0/paplot/wgs_ATL_Xten_merge/index.html", "zip": "//usr/proj/genomon_portal/htdocs/tmp/analysis/ogawalab/wgs/ATL_Xten_merge/hg19/2.5.0/paplot/ogawalab_wgs_ATL_Xten_merge_hg19_2.5.0.zip", "last_update": "2017/03/30", "path": "ogawalab/wgs/ATL_Xten_merge", "cases": 26, "label": "ATL_XTEN_merge"}, "atl_hiseq": {"files": 22, "index": "/../analysis/ogawalab/wgs/ATL_Hiseq/hg19/2.5.0/paplot/wgs_ATL_Hiseq/index.html", "zip": "//usr/proj/genomon_portal/htdocs/tmp/analysis/ogawalab/wgs/ATL_Hiseq/hg19/2.5.0/paplot/ogawalab_wgs_ATL_Hiseq_hg19_2.5.0.zip", "label": "ATL_hiseq", "parent_id": "atl", "path": "ogawalab/wgs/ATL_Hiseq", "cases": 11, "last_update": "2017/03/26"}, "atl_xten_lowpass": {"files": 76, "index": "/../analysis/ogawalab/wgs/ATL_Xten_lowpass/hg19/2.5.0/paplot/wgs_ATL_Xten_lowpass/index.html", "zip": "//usr/proj/genomon_portal/htdocs/tmp/analysis/ogawalab/wgs/ATL_Xten_lowpass/hg19/2.5.0/paplot/ogawalab_wgs_ATL_Xten_lowpass_hg19_2.5.0.zip", "label": "ATL_XTEN_lowpass", "parent_id": "atl", "path": "ogawalab/wgs/ATL_Xten_lowpass", "cases": 38, "last_update": "2017/03/28"}, "rcc": {"files": 28, "index": "/../analysis/ogawalab/wgs/RCC/hg19/2.5.0/paplot/wgs_RCC/index.html", "zip": "//usr/proj/genomon_portal/htdocs/tmp/analysis/ogawalab/wgs/RCC/hg19/2.5.0/paplot/ogawalab_wgs_RCC_hg19_2.5.0.zip", "last_update": "2017/03/22", "path": "ogawalab/wgs/RCC", "cases": 14}}}, "label": "ogawalab"}, "icgc_riken": {"report": {"hcc": []}, "data": {"rna": {}, "wgs": {"hcc": {"files": 300, "path": "icgc_riken/wgs/HCC", "cases": 300}}}, "label": "icgc_riken"}};
 
 db.strategy = {
     exome:      {label:'EXOME', color:"#7cb5ec"},      // blue
