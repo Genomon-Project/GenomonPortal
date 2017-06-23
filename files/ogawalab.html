@@ -23,12 +23,7 @@
         <p id="date">last update</p>
 
         <div class="panel panel-default" style="margin:50px;">
-          <div class="panel-body">
-            <h3 class="panel-title">About ogawalab</h3>
-            <hr>
-            <p>京都大学大学院医学研究所 腫瘍生物学講座</p>
-            <p>Seishi Ogawa M.D., Ph.D., Professor</p>
-          </div>
+          <div class="panel-body" id="contents"></div>
         </div>
 
         <div id="plot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
@@ -50,10 +45,23 @@
     <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
     <script src="js/draw.js"></script>
     <script src="js/db.js"></script>
+    <script src="js/language.js"></script>
     <script type="text/javascript">
+
       page.style();
       page.header("header", "..", "analysis");
       page.footer("footer", "..");
+
+      var profile = {
+        ja: `<h3 class="panel-title">ogawalab とは</h3><hr>
+             <p>京都大学大学院医学研究所 腫瘍生物学講座 (<A href="http://plaza.umin.ac.jp/kyoto_tumorpatho/index.html">site</a>)</p>
+             <p>教授 小川 誠司</p>`,
+
+        en: `<h3 class="panel-title">About ogawalab</h3><hr>
+             <p>Department of Pathology and Tumor Biology, Kyoto University (<A href="http://plaza.umin.ac.jp/kyoto_tumorpatho/index.html">site</a>)</p>
+             <p>Seishi Ogawa M.D., Ph.D., Professor</p>`,
+      };
+      document.getElementById('contents').innerHTML = portal_text.choice(profile);
 
       draw.group_page('ogawalab');
     </script>

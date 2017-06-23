@@ -18,7 +18,50 @@
 
       <!-- row1 -->
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" id="contents"></div>
+      </div>
+      <!-- /row1 -->
+    </div> <!-- /container -->
+
+    <div id="footer"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="libs/jquery_v3.2.0/jquery-3.2.0.min.js"></script>
+    <script src="libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/language.js"></script>
+    <script>
+      page.style();
+      page.header("header", "..", "contact");
+      page.footer("footer", "..");
+      page.accessor("accessor", "Contact Us");
+
+      var profile = {
+        ja: `
+          <h1>Contact Us</h1>
+          <p>Genomonプロジェクトは、以下の共同研究であり、文部科学省の助成金により支援されています。(22134004 and 15H05912).</p>
+          
+          <ul>
+           <li>東京大学医科学研究所ヒトゲノム解析センター　宮野悟研究室</li>
+           <li>京都大学大学院医学研究所 腫瘍生物学講座　小川誠司研究室</li>
+          </ul>
+          
+          
+          <p>
+          このプロジェクトの主要ソフトウェアは<a href="https://github.com/friend1ws"><i class="fa fa-github" aria-hidden="true"></i> 白石友一</a>、
+          <a href="https://github.com/ken0-1n"><i class="fa fa-github" aria-hidden="true"></i> 千葉健一</a>、
+          清水英悟、岡田愛、上村光弘、田中洋子、宮野研究室および小川研究室により開発されています。
+          </p>
+
+          <p>
+            Genomonに関するフィードバックは以下までお願いします。
+            <a href="mailto:genomon.devel@gmail.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> genomon.devel@gmail.com.</a>
+          </p>
+          <p>また、アポイントメントは以下で受け付けています。</p>
+          <p><a href="https://genomon-office.youcanbook.me"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Genomon Office Hour</a></p>
+          <p>The character of Genomon is desined by Yuki Tsujita.</p>`,
+
+        en: `
           <h1>Contact Us</h1>
           <p>Genomon Project is a collaborative effort between</p>
           
@@ -41,24 +84,10 @@
           </p>
           <p>Also, you can make an appointment with us, here.</p>
           <p><a href="https://genomon-office.youcanbook.me"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Genomon Office Hour</a></p>
-          <p>The character of Genomon is desined by Yuki Tsujita.</p>
-        </div>
-      </div>
-      <!-- /row1 -->
-    </div> <!-- /container -->
+          <p>The character of Genomon is desined by Yuki Tsujita.</p>`,
+      };
+      document.getElementById('contents').innerHTML = portal_text.choice(profile);
 
-    <div id="footer"></div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="libs/jquery_v3.2.0/jquery-3.2.0.min.js"></script>
-    <script src="libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="js/page.js"></script>
-
-    <script>
-      page.style();
-      page.header("header", "..", "contact");
-      page.footer("footer", "..");
-      page.accessor("accessor", "Contact Us");
     </script>
   </body>
 </html>

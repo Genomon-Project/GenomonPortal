@@ -23,15 +23,7 @@
         <p id="date">last update</p>
 
         <div class="panel panel-default" style="margin:50px;">
-          <div class="panel-body">
-            <h3 class="panel-title">About ICGC</h3>
-            <hr>
-            <p>国際がんゲノムコンソーシアム（International Cancer Genome Consortium：ICGC)</p>
-            <p>Japan</p>
-            <ul>
-            <li>RIKEN</li>
-            </ul>
-          </div>
+          <div class="panel-body" id="contents"></div>
         </div>
 
         <div id="plot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
@@ -53,10 +45,23 @@
     <script src="libs/Highcharts-5.0.9/modules/treemap.js"></script>
     <script src="js/draw.js"></script>
     <script src="js/db.js"></script>
+    <script src="js/language.js"></script>
     <script type="text/javascript">
+
       page.style();
       page.header("header", "..", "analysis");
       page.footer("footer", "..");
+
+      var profile = {
+        ja: `<h3 class="panel-title">icgc-riken とは</h3><hr>
+             <p>国際がんゲノムコンソーシアム（International Cancer Genome Consortium：ICGC)</p>
+             <p>理化学研究所グループ (<A href="https://dcc.icgc.org/projects/LIRI-JP">icgc site</a>)</p>`,
+
+        en: `<h3 class="panel-title">About icgc-riken</h3><hr>
+             <p>International Cancer Genome Consortium：ICGC</p>
+             <p>RIKEN (<A href="https://dcc.icgc.org/projects/LIRI-JP">icgc site</a>)</p>`,
+      };
+      document.getElementById('contents').innerHTML = portal_text.choice(profile);
 
       draw.group_page('icgc_riken');
     </script>

@@ -26,7 +26,7 @@
 <div class="container bg-overlay">
   <div class="row text-left" style="padding-left:50px;">
     <h1 style="font-size: 6em; margin: 20px 0;">Genomon Portal</h1>
-    <p style="font-size: 2em;">工事中</p>
+    <p style="font-size: 2em;" id="bg-header"></p>
   </div>
 </div>
 
@@ -42,18 +42,14 @@
       <!-- row2 -->
       <div class="row" style="margin-top:50px;">
         <div class="col-md-6">
-          <h3>The Genomon Portal (GP)</h3>
-          <p>GPは医学支援のため、がんゲノム研究成果のデータ共有を目指しています。</p>
-
+          <div id="contents1"></div>
           <div style="margin-top:20px;margin-bottom:50px;">
             <a href="files/_about.html"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> About th GP</a>
           </div>
         </div>
 
         <div class="col-md-6">
-          <h3>Analysis Data</h3>
-          <p>GPでは、GenomonPipelineを使用して解析されたがんゲノム解析結果の一部を所有者の許可を得て公開しています。</p>
-
+          <div id="contents2"></div>
           <div style="margin-top:20px;">
             <a href="files/_analysis.html"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Analysis</a>
           </div>
@@ -64,7 +60,7 @@
       <!-- row3 -->
       <div class="row">
         <div class="col-md-12">
-          <h3>Case Distribution by Disease Type</h3>
+          <!-- <h3>Case Distribution by Disease Type</h3> -->
         </div>
       </div> <!-- /row -->
 
@@ -73,7 +69,7 @@
           <div id="tree" class="tree"></div>
         </div>
         <div class="col-md-4">
-          <h3>Data Availability Summary</h3>
+          <h3 id="summary"></h3>
           <table id="table"></table>
         </div>
       </div> <!-- /row -->
@@ -91,10 +87,44 @@
     <script src="files/libs/Highcharts-5.0.9/modules/treemap.js"></script>
     <script src="files/js/draw.js"></script>
     <script src="files/js/db.js"></script>
+    <script src="files/js/language.js"></script>
     <script>
       page.style();
       page.header("header", ".", "top");
       page.footer("footer", ".");
+
+      var header = {
+        ja: `工事中`,
+        en: `Under development.`,
+      };
+      document.getElementById('bg-header').innerHTML = portal_text.choice(header);
+      
+      var contents1 = {
+        ja: `
+          <h3>The Genomon Portal (GP)</h3>
+          <p>GPは医学支援のため、がんゲノム研究成果のデータ共有を目指しています。</p>`,
+        en: `
+          <h3>The Genomon Portal (GP)</h3>
+          <p>GP aims at sharing data on cancer genome research results for medical support.</p>`,
+      };
+      document.getElementById('contents1').innerHTML = portal_text.choice(contents1);
+      
+      var contents2 = {
+        ja: `
+          <h3>Analysis Data</h3>
+          <p>GPでは、GenomonPipelineを使用して解析されたがんゲノム解析結果の一部を所有者の許可を得て公開しています。</p>`,
+        en: `
+          <h3>Analysis Data</h3>
+          <p>In GP, we release a part of cancer genome analysis results analyzed using GenomonPipeline with permission of owner.</p>`,
+      };
+      document.getElementById('contents2').innerHTML += portal_text.choice(contents2);
+      
+      var summary = {
+        ja: `公開中のデータ`,
+        en: `Data Availability Summary`,
+      };
+      document.getElementById('summary').innerHTML += portal_text.choice(summary);
+
       draw.index_bar('plot');
       draw.index_tree('tree');
       draw.index_summary('table');

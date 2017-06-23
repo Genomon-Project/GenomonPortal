@@ -18,54 +18,21 @@
 
       <!-- row1 -->
       <div class="row">
-        <div class="col-md-12">
-          <h1>Overview</h1>
-          <p>
-          次世代シーケンサーとスーパーコンピューティング技術の発展に伴い、ヒトゲノム解析による個別化医療が提唱されています。<br>
-          特にがんの個別化医療や予防を実現するためには、まずはデータの収集と蓄積が必要です。<br>
-          すなわち、がんシステムのデータベース化であり、GenomonPortalではゲノムデータやその解析結果を収集、共有することでがん研究に貢献することを目標としています。
-          </p>
-        </div>
+        <div class="col-md-12" id="contents1"></div>
       </div>
       <!-- /row1 -->
 
       <!-- row2 -->
       <div class="row">
-        <div class="col-md-12">
-          <h1>About GenomonPipeline</h1>
-            <p>
-            Genomon enables us to perform sensitive and accurate detection of most types of genomic variants
-            (single nucleotide variants, short indels, mid-size (20bp - 300bp) indels and large scale structural variations),
-            and transcriptomic changes (gene fusions, aberrant splicing patterns),
-            and fairly good performance is demonstrated through 
-            <a href="http://www.ncbi.nlm.nih.gov/pubmed?term=(Ogawa%2C%20Seishi%5BAuthor%5D)%20AND%20Miyano%2C%20Satoru%5BAuthor%5D">a large number of important cancer genome projects</a>.
-            </p>
-            <p>
-            Genomon adopts efficient job scheduling framework that enables us easily analyzing several hundreds of 
-            genome and transcriptome sequencing data simultaneously.
-            Genomon is easy to install and after installing, 
-            users can start analysis just preparing simple sample configuration files.
-            </p>
-            <p>
-            <a href="https://genomon-project.github.io/GenomonPagesR/"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> see detail, GenomonPipeline</a>
-            </p>
-        </div>
+        <div class="col-md-12" id="contents2"></div>
       </div>
       <!-- /row2 -->
 
       <!-- row3 -->
       <div class="row">
-        <div class="col-md-12">
-          <h1>About Us</h1>
-          <p>
-          このサイトはチームGenomonにより作成されています。
-          </p>
-          <p>
-          <a href="contact.html"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Contact Us</a>
-          </p>
-        </div>
+        <div class="col-md-12" id="contents3"></div>
       </div>
-      <!-- /row3 -->
+
     </div> <!-- /container -->
 
     <div id="footer"></div>
@@ -74,11 +41,84 @@
     <script src="libs/jquery_v3.2.0/jquery-3.2.0.min.js"></script>
     <script src="libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="js/page.js"></script>
+    <script src="js/language.js"></script>
     <script>
       page.style();
       page.header("header", "..", "about");
       page.footer("footer", "..");
       page.accessor("accessor", "About the GP");
+
+      var profile1 = {
+        ja: `
+          <h1>Overview</h1>
+          <p>
+          次世代シーケンサーとスーパーコンピューティング技術の発展に伴い、ヒトゲノム解析による個別化医療が提唱されています。<br>
+          特にがんの個別化医療や予防を実現するためには、まずはデータの収集と蓄積が必要です。<br>
+          すなわち、がんシステムのデータベース化であり、GenomonPortalではゲノムデータやその解析結果を収集、共有することでがん研究に貢献することを目標としています。
+          </p>`,
+        en: `
+          <h1>Overview</h1>
+          <p>
+          GenomonPortal aims to contribute to cancer research by collecting and sharing genome data and analysis results.
+          </p>`,
+      };
+      document.getElementById('contents1').innerHTML = portal_text.choice(profile1);
+      
+      var profile2 = {
+        ja: `
+          <h1>About GenomonPipeline</h1>
+          <p>
+          Genomonはほとんどのタイプのゲノム変異体（単一ヌクレオチド変異体、short indel、mid-size (20bp～300bp）indel、および大規模な構造変化）や転写物変化（遺伝子融合、スプライシングパターン異常）に対して、高感度で正確な検出を可能にします。
+          <a href="http://www.ncbi.nlm.nih.gov/pubmed?term=(Ogawa%2C%20Seishi%5BAuthor%5D)%20AND%20Miyano%2C%20Satoru%5BAuthor%5D">多くの重要な癌ゲノムプロジェクト</a>を通じて、かなり良い成績が証明されています
+          </p>
+          <p>
+          Genomonは効率的なジョブスケジューリングフレームワークを採用しており、数百ゲノムおよびトランスクリプトーム配列データを同時に検出することができます。<br>
+          Genomonはインストールが簡単で、インストール後には、ユーザーは簡単なサンプル構成ファイルを準備するだけで分析を開始できます。
+          </p>
+          <p>
+          <a href="https://genomon-project.github.io/GenomonPagesR/"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> GenomonPipeline について詳しく知る</a>
+          </p>`,
+        en: `
+          <h1>About GenomonPipeline</h1>
+          <p>
+          Genomon enables us to perform sensitive and accurate detection of most types of genomic variants
+          (single nucleotide variants, short indels, mid-size (20bp - 300bp) indels and large scale structural variations),
+          and transcriptomic changes (gene fusions, aberrant splicing patterns),
+          and fairly good performance is demonstrated through 
+          <a href="http://www.ncbi.nlm.nih.gov/pubmed?term=(Ogawa%2C%20Seishi%5BAuthor%5D)%20AND%20Miyano%2C%20Satoru%5BAuthor%5D">a large number of important cancer genome projects</a>.
+          </p>
+          <p>
+          Genomon adopts efficient job scheduling framework that enables us easily analyzing several hundreds of 
+          genome and transcriptome sequencing data simultaneously.
+          Genomon is easy to install and after installing, 
+          users can start analysis just preparing simple sample configuration files.
+          </p>
+          <p>
+          <a href="https://genomon-project.github.io/GenomonPagesR/"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> see detail, GenomonPipeline</a>
+          </p>`,
+      };
+      document.getElementById('contents2').innerHTML += portal_text.choice(profile2);
+      
+      var profile3 = {
+        ja: `
+          <h1>About Us</h1>
+          <p>
+          このサイトはチームGenomonにより作成されています。
+          </p>
+          <p>
+          <a href="contact.html"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Contact Us</a>
+          </p>`,
+        en: `
+          <h1>About Us</h1>
+          <p>
+          Team Genomon created this site.
+          </p>
+          <p>
+          <a href="contact.html"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Contact Us</a>
+          </p>`,
+      };
+      document.getElementById('contents3').innerHTML += portal_text.choice(profile3);
+
     </script>
   </body>
 </html>

@@ -49,16 +49,19 @@ page.header = function (id, root, active) {
                 <input type="hidden" name="hl" value="ja" />
                 <input type="hidden" name="ie" value="utf-8">
                 <input type="hidden" name="oe" value="utf-8">
-                <input type="hidden" value="genomon-project.github.io" name="as_sitesearch" />
-                <input type="text" class="form-control" name="q" size="31" maxlength="256" value="" placeholder="検索キーワード" />
+                <input type="hidden" value="https://genomon_portal.hgc.jp/" name="as_sitesearch" />
+                <input type="text" class="form-control" name="q" size="31" maxlength="256" value="" placeholder="{placeholder}" />
               </div>
-              <input type="submit" class="btn btn-default" name="btnG" value="検索" />
+              <input type="submit" class="btn btn-default" name="btnG" value="{search}" />
             </form>
           </ul>
 
         </div><!--/.nav-collapse -->
       </div>
-    </nav>`).split("{root}").join(root);
+    </nav>`)
+    .split("{root}").join(root)
+    .split("{placeholder}").join(portal_text.get("placeholder"))
+    .split("{search}").join(portal_text.get("search"));
 };
 
 page.footer = function (id, root) {
@@ -68,7 +71,7 @@ page.footer = function (id, root) {
       <div class="container">
         <hr>
         <div class="row">
-          <div class="col-md-10">
+          <div style="float:left;">
             <p>The super-computing resource was provided by Human Genome Center, the Institute of Medical Science,The University of Tokyo (http://sc.hgc.jp/shirokane.html).</p>
             <p>&copy; 2017 Gemonon Project. All Rights reserved.</p>
             <p style="padding-left:16px;">
@@ -76,8 +79,8 @@ page.footer = function (id, root) {
               <i class="fa fa-envelope" aria-hidden="true" style="margin-right: 5px;"></i><a href="mailto:genomon.devel@gmail.com">genomon.devel@gmail.com</a>
             </p>
           </div>
-          <div class="col-md-2">
-            <a href="http://www.hgc.jp"><img src="http://www.hgc.jp/english/img/logo/HGC_logo_S.png" border="0" align="right" alt="This website is provided by Human Genome Center, The Institute of Medical Science, The University of Tokyo" /></a>
+          <div style="float:right;">
+            <a href="http://www.hgc.jp"><img src="https://www.hgc.jp/english/img/logo/HGC_logo_S.png" border="0" align="right" alt="This website is provided by Human Genome Center, The Institute of Medical Science, The University of Tokyo" /></a>
           </div>
         </div>
       </div>
