@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GenomonPortal-history</title>
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+    <style>
+    tr:hover { 
+       background: #FFFFCC;
+       cursor: pointer;
+    }
+    td a { 
+       display: block; 
+    }
+    </style>
+
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <!-- container -->
+    <div class="container">
+      <!-- acsessor -->
+      <div id="accessor"></div>
+
+      <!-- row1 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div id="title"></div>
+          <div id="history"></div>
+        </div>
+      </div>
+      <!-- /row1 -->
+    </div> <!-- /container -->
+
+    <div id="footer"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="libs/jquery_v3.2.0/jquery-3.2.0.min.js"></script>
+    <script src="libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/draw.js"></script>
+    <script src="js/language.js"></script>
+    <script>
+      page.style();
+      page.header("header", "..", "about");
+      page.footer("footer", "..");
+      page.accessor("accessor", "About the GP");
+
+      var profile1 = {
+        ja: `
+          <h1>更新履歴</h1><br>
+`,
+        en: `
+          <h1>Update history</h1><br>
+`,
+      };
+      document.getElementById('title').innerHTML = portal_text.choice(profile1);
+      
+      draw.hitstory_table("history");
+    </script>
+  </body>
+</html>

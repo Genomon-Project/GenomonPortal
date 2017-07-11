@@ -1,11 +1,53 @@
 (function(){
 draw = {};
 
-draw.group_bar = function (id, group) {
+draw.hitstory_table = function (id) {
+    
+    var element = document.getElementById(id);
+    var innercode = "";
+    for (var i in db.history) {
+        var path = "./" + db.history[i].group + "_" + db.history[i].project + ".html";
+        var target = "window.document.location='" + path + "';";
+        innercode += '<tr onclick="' + target + '"><td>' + db.history[i].update_date + '</td>';
+        innercode += '<td>' + db.projects[db.history[i].group].label + '</td>';
+        innercode += '<td>' + db.strategy[db.history[i].strategy].label + '</td>';
+        
+        var label = "";
+        if ("label" in db.projects[db.history[i].group].data[db.history[i].strategy][db.history[i].project]) {
+            label = db.projects[db.history[i].group].data[db.history[i].strategy][db.history[i].project].label;
+        } else {
+            label = db.disease[db.history[i].project].label;
+        }
+        innercode += '<td>' + label + '</td>';
+        innercode += '<td>' + db.history[i].genomon + '</td></tr>';
+    }
+    
+    element.innerHTML = '<table class="table"><tr><th>Update date</th><th>group</th><th>strategy</th><th>project</th><th>Genomon-version</th></tr>' + innercode + '</table>';
+};
+
+
+draw.group_bar = function (id, group, index) {
     var data = db.get_groupdata_bar(group);
     Highcharts.chart(id, {
         chart: {
-            type: 'column'
+            type: 'column',
+            events: {
+                click: function(e) {
+
+                    var i = Math.floor((e.chartX - e.xAxis[0].axis.left)/(e.xAxis[0].axis.width/data.key.length))
+                    if (data.child[i] == true) {
+                        return;
+                    }
+                    var cur = "";
+                    if (index == true) {
+                        cur = "files/"
+                    }
+                    document.location.href = cur + group + "_" + data.key[i] + ".html";
+                }
+            },
+            style: {
+                cursor: "pointer"
+            }
         },
         title: {
             text: 'Cases by Disease Type'
@@ -31,8 +73,22 @@ draw.group_bar = function (id, group) {
         plotOptions: {
             column: {
                 pointPadding: 0.2,
-                borderWidth: 0
-            }
+                borderWidth: 0,
+                events: {
+                    click: function(e) {
+                        var i = Math.floor((e.chartX - this.xAxis.left)/(this.xAxis.width/data.key.length))
+//                        console.log([i, e.chartX-this.xAxis.left, this.xAxis.width, data.key.length, this.xAxis.width/data.key.length])
+                        if (data.child[i] == true) {
+                            return;
+                        }
+                        var cur = "";
+                        if (index == true) {
+                            cur = "files/"
+                        }
+                        document.location.href = cur + group + "_" + data.key[i] + ".html";
+                    },
+                },
+            },
         },
         series: [
             { name: db.strategy.exome.label, color: db.strategy.exome.color, data: data.exome}, 
@@ -40,7 +96,10 @@ draw.group_bar = function (id, group) {
             { name: db.strategy.target.label, color: db.strategy.target.color, data: data.target},
             { name: db.strategy.rna.label, color: db.strategy.rna.color, data: data.rna},
             { name: db.strategy.rna_single.label, color: db.strategy.rna_single.color, data: data.rna_single},
-        ]
+        ],
+        credits: {
+            enabled: false,
+        }
     });
     return data;
 };
@@ -85,7 +144,10 @@ draw.project_pie = function (id, group, disease) {
                 { name: db.strategy.rna.label, color: db.strategy.rna.color, y: data.rna},
                 { name: db.strategy.rna_single.label, color: db.strategy.rna_single.color, y: data.rna_single},
             ]
-        }]
+        }],
+        credits: {
+            enabled: false,
+        }
     });
     
 
@@ -145,7 +207,10 @@ draw.index_bar = function (id) {
             { name: db.strategy.target.label, color: db.strategy.target.color, data: data.target},
             { name: db.strategy.rna.label, color: db.strategy.rna.color, data: data.rna},
             { name: db.strategy.rna_single.label, color: db.strategy.rna_single.color, data: data.rna_single},
-        ]
+        ],
+        credits: {
+            enabled: false,
+        }
     });
 };
 
@@ -182,6 +247,9 @@ draw.index_tree = function (id) {
         }],
         title: {
             text: 'Case Distribution by Disease Type'
+        },
+        credits: {
+            enabled: false,
         }
     });
 };

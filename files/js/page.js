@@ -4,7 +4,7 @@ page = {};
 page.style = function () {
 
     var body = document.getElementsByTagName("body")[0];
-    body.style["font-family"] = '-apple-system,"Noto Sans JP",".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif';
+    body.style["font-family"] = '-apple-system,"Meiryo UI","Meiryo","Noto Sans JP",".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif';
     body.style["font-size"] = '1.5em';
     body.style["line-height"] = '1.5';
 };
@@ -38,9 +38,10 @@ page.header = function (id, root, active) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ` + active_class[0] + `><a href="{root}/files/_analysis.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Analysis</a></li>
+            <li ` + active_class[0] + `><a href="{root}/files/_analysis.html"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span> Analysis</a></li>
             <li ` + active_class[1] + `><a href="{root}/files/_about.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> About the GP</a></li>
             <li ` + active_class[2] + `><a href="{root}/files/_contact.html"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> Contact Us</a></li>
+            <li ` + active_class[3] + `><a href="{root}/files/_history.html"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Update History</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
