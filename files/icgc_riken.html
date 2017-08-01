@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <title>GenomonPortal-icgc-riken</title>
     
   </head>
@@ -53,13 +54,13 @@
       page.footer("footer", "..");
 
       var profile = {
-        ja: `<h3 class="panel-title">icgc-riken とは</h3><hr>
-             <p>国際がんゲノムコンソーシアム（International Cancer Genome Consortium：ICGC)</p>
-             <p>理化学研究所グループ (<A href="https://dcc.icgc.org/projects/LIRI-JP">icgc site</a>)</p>`,
+        ja: `<h3 class="panel-title">icgc-riken</h3><hr>
+             <p>理化学研究所 統合生命医科学研究センター ゲノムシーケンス解析研究チーム (<A href="http://www.riken.jp/research/labs/ims/genome_seq_anl/" target=_blank><i class="fa fa-external-link" aria-hidden="true"></i> site</a>)</p>
+             <p>チームリーダー 中川 英刀 (M.D., Ph.D) </p>`,
 
         en: `<h3 class="panel-title">About icgc-riken</h3><hr>
-             <p>International Cancer Genome Consortium：ICGC</p>
-             <p>RIKEN (<A href="https://dcc.icgc.org/projects/LIRI-JP">icgc site</a>)</p>`,
+             <p>RIKEN Center for Integrative Medical Sciences Laboratory for Genome Sequencing Analysis (<A href="http://www.riken.jp/research/labs/ims/genome_seq_anl/">site</a>)</p>
+             <p>Team Leader: Hidewaki Nakagawa (M.D., Ph.D) </p>`,
       };
       document.getElementById('contents').innerHTML = portal_text.choice(profile);
 

@@ -7,6 +7,7 @@
     <title>GenomonPortal-contact</title>
     <link rel="stylesheet" type="text/css" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   </head>
   <body>
     <div id="header"></div>
@@ -39,52 +40,21 @@
       var profile = {
         ja: `
           <h1>Contact Us</h1>
-          <p>Genomonプロジェクトは、以下の共同研究であり、文部科学省の助成金により支援されています。(22134004 and 15H05912).</p>
-          
-          <ul>
-           <li>東京大学医科学研究所ヒトゲノム解析センター　宮野悟研究室</li>
-           <li>京都大学大学院医学研究所 腫瘍生物学講座　小川誠司研究室</li>
-          </ul>
-          
-          
+          <br>
+          <p>GenomonPortalは東京大学医科学研究所ヒトゲノム解析センター宮野悟研究室により運営されています。</p>
           <p>
-          このプロジェクトの主要ソフトウェアは<a href="https://github.com/friend1ws"><i class="fa fa-github" aria-hidden="true"></i> 白石友一</a>、
-          <a href="https://github.com/ken0-1n"><i class="fa fa-github" aria-hidden="true"></i> 千葉健一</a>、
-          清水英悟、岡田愛、上村光弘、田中洋子、宮野研究室および小川研究室により開発されています。
-          </p>
-
-          <p>
-            Genomonに関するフィードバックは以下までお願いします。
+            GenomonPortalに関するフィードバックは以下までお願いします。
             <a href="mailto:genomon.devel@gmail.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> genomon.devel@gmail.com.</a>
-          </p>
-          <p>また、アポイントメントは以下で受け付けています。</p>
-          <p><a href="https://genomon-office.youcanbook.me"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Genomon Office Hour</a></p>
-          <p>The character of Genomon is desined by Yuki Tsujita.</p>`,
-
+         `,
         en: `
           <h1>Contact Us</h1>
-          <p>Genomon Project is a collaborative effort between</p>
-          
-          <ul>
-           <li>Satoru Miyano Laboratory, Human Geome Center, The Institute of Medical Science, The University of Tokyo.</li>
-           <li>Seishi Ogawa Laboratory, Department of Pathology and Tumor Biology, Graduate School of Medicine, Kyoto University.</li>
-          </ul>
-          <p>and supported by grants from Miinistry of Education, Culture, Sports, Science and Technology, Japan (22134004 and 15H05912).</p>
-          
+          <br>
+          <p>GenomonPortal is operated by Satoru Miyano Laboratory, Human Geome Center, The Institute of Medical Science, The University of Tokyo.</p>
           <p>
-            The most packages in this project are developed by 
-            <a href="https://github.com/friend1ws"><i class="fa fa-github" aria-hidden="true"></i> Yuichi Shirashi</a>
-            and 
-            <a href="https://github.com/ken0-1n"><i class="fa fa-github" aria-hidden="true"></i> Kenichi Chiba</a>
-            , with the help of Eigo Shimizu, Ai Okada, Mitsuhiro Komura, Hiroko Tanaka and the members of Satoru Miyano and Seishi Ogawa laboratories.
-          </p>
-          <p>
-            We greatly welcome feedback on Genomon to 
+            We greatly welcome feedback on GenomonPortal to 
             <a href="mailto:genomon.devel@gmail.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> genomon.devel@gmail.com.</a>
           </p>
-          <p>Also, you can make an appointment with us, here.</p>
-          <p><a href="https://genomon-office.youcanbook.me"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Genomon Office Hour</a></p>
-          <p>The character of Genomon is desined by Yuki Tsujita.</p>`,
+        `,
       };
       document.getElementById('contents').innerHTML = portal_text.choice(profile);
 
