@@ -12,7 +12,7 @@ page.style = function () {
 page.header = function (id, root, active) {
 
     var header = document.getElementById(id);
-    var active_class =["","",""];
+    var active_class =["","","",""];
     if (active == "analysis") {
       active_class[0] = 'class="active"';
     }
@@ -22,7 +22,10 @@ page.header = function (id, root, active) {
     else if (active == "contact") {
       active_class[2] = 'class="active"';
     }
-
+    else if (active == "history") {
+      active_class[3] = 'class="active"';
+    }
+    
     header.innerHTML = (`
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
@@ -30,6 +33,7 @@ page.header = function (id, root, active) {
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

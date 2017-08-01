@@ -6,6 +6,11 @@ draw.hitstory_table = function (id) {
     var element = document.getElementById(id);
     var innercode = "";
     for (var i in db.history) {
+
+        if ((db.history[i].project in db.projects[db.history[i].group].data[db.history[i].strategy]) == false) {
+            continue;
+        }
+
         var path = "./" + db.history[i].group + "_" + db.history[i].project + ".html";
         var target = "window.document.location='" + path + "';";
         innercode += '<tr onclick="' + target + '"><td>' + db.history[i].update_date + '</td>';
@@ -299,10 +304,19 @@ draw.index_summary = function (id) {
 
 draw.project_summary = function (id, group, disease) {
     
+    var type = portal_text.choice({
+        ja: db.disease[disease].type + " (" + db.disease[disease].type_JP + ")",
+        en: db.disease[disease].type,
+    });
+    var site = portal_text.choice({
+        ja: db.disease[disease].site + " (" + db.disease[disease].site_JP + ")",
+        en: db.disease[disease].site,
+    });
+
     var data = [
         ["Project Name", db.disease[disease].label],
-        ["Disease Type", db.disease[disease].type],
-        ["Primary Site", db.disease[disease].site],
+        ["Disease Type", type],
+        ["Primary Site", site],
         ["Group", db.projects[group].label],
     ];
     
@@ -420,10 +434,12 @@ draw.project_report = function (id, group, disease) {
        
        if (("link" in db.projects[group].report[disease][i]) 
         && (db.projects[group].report[disease][i].link.length > 0)) {
-           var a = document.createElement("a");
-           a.setAttribute("href", db.projects[group].report[disease][i].link);
-           a.innerHTML = db.projects[group].report[disease][i].title;
-           li.appendChild(a);
+           //var a = document.createElement("a");
+           //a.setAttribute("href", db.projects[group].report[disease][i].link);
+           //a.innerHTML = db.projects[group].report[disease][i].title;
+           //li.appendChild(a);
+           
+           li.innerHTML = db.projects[group].report[disease][i].title + ' <a href="' + db.projects[group].report[disease][i].link + '">[link]</a>';
        }
        else {
            li.innerHTML = db.projects[group].report[disease][i].title;
