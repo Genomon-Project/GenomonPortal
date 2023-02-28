@@ -103,8 +103,9 @@ draw.index_bar = function (id) {
             stackLabels: {
                 enabled: true,
                 style: {
-                    fontWeight: 'bold',
-                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    //fontWeight: 'bold',
+                    //color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray',
+                    color: '#666'
                 }
             }
         },
